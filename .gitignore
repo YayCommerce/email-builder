@@ -1,0 +1,39 @@
+#packages
+vendor
+node_modules
+#build
+.turbo
+build/
+dist/
+release/
+
+#configs
+phpunit.xml
+wp-cli.local.yml
+
+#local env
+.env.local
+
+#local logs
+.pnpm-debug.log
+
+.DS_Store
+html/
+plugins/yaymail/src/Logs/*.xml
+
+
+# Ignore all .zip files
+*.zip
+
+# Ignore all files in any release folder at any level
+**/release/**
+
+plans/
+.claude
+.opencode/
+docs/
+AGENTS.md
+CLAUDE.md
+.repomixignore
+release-manifest.json
+tools/fzf/

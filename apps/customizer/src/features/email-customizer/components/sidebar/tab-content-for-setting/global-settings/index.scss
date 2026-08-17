@@ -1,0 +1,17 @@
+.yaymail-setting-switch-label {
+  text-transform: uppercase;
+}
+
+.yaymail-custom-css-editor {
+  .ace_gutter-cell {
+    padding-left: 13px;
+  }
+  .ace_search {
+    width: 150px;
+
+    .ace_search_field {
+      width: 100%;
+      min-width: 100%;
+    }
+  }
+}

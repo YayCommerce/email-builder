@@ -1,0 +1,91 @@
+.header__select-template {
+  width: 250px;
+
+  .option-template__content {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .yaymail-select-selection-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    .option-template__text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100px;
+    }
+  }
+
+  &--popup {
+    max-width: 600px !important;
+
+    .option-template {
+      &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      &__text {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 100%;
+        max-width: 250px;
+      }
+    }
+
+    .yaymail-select-item-empty {
+      text-align: center;
+    }
+  }
+}
+
+.option-template__template-status {
+  .yaymail-badge-status-dot {
+    width: 7px !important;
+    height: 7px !important;
+    top: 0 !important;
+  }
+}
+
+.option-template__template-recipient {
+  .yaymail-badge-count {
+    font-weight: 500;
+    box-shadow:
+      0px 1px 3px rgba(0, 0, 0, 0.1),
+      0px 1px 2px -1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 90px;
+  }
+}
+
+.option-template__template-recipient--primary {
+  .yaymail-badge-count {
+    color: var(--yaymail-color-wcPurple-default) !important;
+    background-color: color-mix(in srgb, var(--yaymail-color-wcPurple-default) 6%, white) !important;
+  }
+}
+.option-template__template-recipient--secondary {
+  .yaymail-badge-count {
+    color: #fcb900 !important;
+    background-color: #fffaeb !important;
+  }
+}
+
+.option-template__template-recipient--third {
+  .yaymail-badge-count {
+    color: #333333 !important;
+    background-color: #f8f8f8 !important;
+  }
+}
+
+.yaymail-select-dropdown {
+  .yaymail-badge {
+    text-transform: initial !important;
+  }
+}

@@ -1,0 +1,14 @@
+.yaymail-customizer-element-social {
+    textAlign: center;
+    // overflow: hidden;
+
+    .yaymail-social-icon-link {
+        text-decoration: none;
+        color: initial;
+        display: inline-block;
+
+        img {
+            vertical-align: middle;
+        }
+    }
+}

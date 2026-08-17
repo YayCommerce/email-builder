@@ -1,0 +1,12 @@
+.yaymail-customizer-element-button {
+  &__anchor {
+    display: block;
+    pointer-events: none;
+    text-decoration: none !important;
+
+    // Let ElementWrapper handle selection; EditZone re-enables its own hits below.
+    .yaymail-edit-zone {
+      pointer-events: auto;
+    }
+  }
+}

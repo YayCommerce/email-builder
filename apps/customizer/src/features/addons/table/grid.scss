@@ -1,0 +1,102 @@
+.yaymail-addons-table-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+
+    .yaymail-addons-table-grid__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 8px;
+        background-color: #ffffff;
+    }
+    .yaymail-addons-table-grid__item-info,
+    .yaymail-addons-table-grid__item-actions {
+        padding: 20px;
+    }
+
+    .yaymail-addons-table-grid__item-info {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .yaymail-addons-table-grid__item-image {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 6px;
+        margin-bottom: 7px;
+    }
+
+    .yaymail-addons-table-grid__item-info-title {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 28px;
+        color: #1d2327;
+        margin: 0;
+    }
+
+    .yaymail-addons-table-grid__item-info-description {
+        font-size: 14px;
+        line-height: 24px;
+        color: #495057;
+        margin: 0;
+    }
+
+    .yaymail-addons-table-grid__item-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        border-top: 1px solid #f0f3f7;
+    }
+
+    .yaymail-addons-table-grid__item-actions-head {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        .yaymail-addons-table-grid__item-view-settings {
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            background: color-mix(in srgb, var(--yaymail-color-wcPurple-default) 10%, transparent);
+            color: var(--yaymail-color-wcPurple-default);
+            border: none;
+
+            &:hover {
+                background: var(--yaymail-color-wcPurple-default) !important;
+                color: white;
+            }
+        }
+    }
+
+    .yaymail-addons-table-grid__item-view-details {
+        height: 38px;
+        padding: 0 14px;
+        font-weight: 500;
+        border-color: #d4d6e7;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            color: #495057 !important;
+            border-color: #495057 !important;
+        }
+    }
+
+    .yaymail-addons-not-installed-badge {
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: 500;
+        border-radius: 100px;
+        color: #1d2327;
+        background-color: #f1f2f3;
+    }
+}

@@ -1,0 +1,23 @@
+.yaymail-number-input {
+    $border-radius: var(--yaymail-sidebar-border-radius-md);
+
+    &-label {
+        text-transform: capitalize;
+        font-size: 12px;
+        font-weight: 500;
+        margin-left: 2px;
+        color: var(--yaymail-color-antarctica);
+    }
+
+    .yaymail-input-number {
+        border-radius: $border-radius;
+    }
+
+    .yaymail-input-number-handler-up {
+        border-start-end-radius: $border-radius;
+    }
+
+    .yaymail-input-number-handler-down {
+        border-end-end-radius: $border-radius
+    }
+}

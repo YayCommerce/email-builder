@@ -1,0 +1,24 @@
+.yaymail-customizer-settings__email-settings {
+  .yaymail-custom-color-picker {
+    margin-bottom: 20px;
+  }
+
+  .yaymail-title {
+    margin-bottom: 5px;
+  }
+
+  .yaymail-input-clear-icon {
+    color: #333436;
+    &:hover {
+      color: #ffffff;
+    }
+  }
+  .yaymail-custom-input {
+    .yaymail-input {
+      &::placeholder {
+        color: #575757;
+        opacity: 1;
+      }
+    }
+  }
+}

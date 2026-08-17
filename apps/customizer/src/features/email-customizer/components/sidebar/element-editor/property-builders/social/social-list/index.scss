@@ -1,0 +1,104 @@
+@use '@src/assets/styles/mixins' as *;
+
+.yaymail-editor-property-social-list {
+    $item-margin: 10px;
+
+    .yaymail-social-item {
+        &:not(:last-child) {
+            margin-bottom: $item-margin;
+        }
+        background-color: var(--yaymail-sidebar-backgroundHistoryItem-default);
+        border-radius: var(--yaymail-sidebar-border-radius-md);
+        overflow: hidden;
+    }
+
+    .yaymail-social-item__header {
+        cursor: pointer;
+        display: flex;
+        height: 35px;
+        padding: 4px;
+    }
+
+    .yaymail-social-item.editing .yaymail-social-item__header,
+    .yaymail-social-item__header:hover {
+        background-color: #292e31;
+
+        .yaymail-social-item__label {
+            color: var(--yaymail-color-white);
+        }
+    }
+
+    .yaymail-social-item__handle,
+    .yaymail-social-item__btn-delete {
+        text-align: center;
+        flex-grow: 1;
+        margin: auto;
+    }
+
+    .yaymail-social-item__label {
+        flex-grow: 9;
+        font-size: 14px;
+        color: var(--yaymail-color-antarctica);
+        margin: auto;
+    }
+
+    .yaymail-social-item__handle {
+        cursor: move;
+    }
+
+    .yaymail-social-item__btn-delete {
+        color: var(--yaymail-color-white);
+        opacity: 0.25;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    .yaymail-ghost-social-icons {
+        border: 1px dotted var(--yaymail-color-antarctica);
+
+        & > * {
+            display: none;
+        }
+    }
+
+    .yaymail-social-item__edit-section {
+        background-color: #333436;
+        padding: calc(#{$item-margin} * 1.5);
+
+        & > * {
+            &:not(:last-child) {
+                margin-bottom: calc(#{$item-margin} * 1.5);
+            }
+        }
+
+        .yaymail-select-selector {
+            background-color: var(--yaymail-color-caviar) !important;
+        }
+    }
+
+    .yaymail-btn-add-social {
+        position: relative;
+        display: inline-block;
+        margin-left: auto;
+        cursor: pointer;
+        text-align: center;
+        color: var(--yaymail-color-antarctica);
+        font-weight: 500;
+        margin-top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 7px 14px;
+        background-color: var(--yaymail-sidebar-backgroundHistoryItem-default);
+        border-radius: 5px;
+
+        &:hover {
+            background-color: #424547;
+        }
+    }
+
+    .yaymail-capitalized {
+        text-transform: capitalize;
+    }
+}

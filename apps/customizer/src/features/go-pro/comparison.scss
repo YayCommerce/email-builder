@@ -1,0 +1,129 @@
+.yaymail-go-pro__comparison-wrapper {
+    margin-top: 100px;
+}
+
+.yaymail-go-pro__comparison__title {
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 24px 0;
+    line-height: 58px;
+}
+
+.yaymail-go-pro__comparison__description {
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.yaymail-go-pro__comparison__table-container {
+    margin-top: 50px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 5px;
+    position: relative;
+}
+
+.yaymail-go-pro__comparison__table-item {
+    border-radius: 6px;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    border-bottom: 1px solid #fafafa;
+    &:first-child {
+        border-bottom: none;
+    }
+    & > * {
+        padding: 10px;
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    .yaymail-go-pro__comparison__table-item__name {
+        flex: 2;
+        z-index: 1;
+        a {
+            color: inherit;
+            display: flex;
+            align-items: center;
+            svg {
+                width: 17px;
+                height: 17px;
+            }
+        }
+    }
+
+    .yaymail-go-pro__comparison__table-item__yaymail-free,
+    .yaymail-go-pro__comparison__table-item__yaymail-pro {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .yaymail-go-pro__comparison__table-item__placeholder {
+        flex: 0.5;
+    }
+}
+
+.yaymail-go-pro__comparison__table-group {
+    margin-bottom: 50px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.yaymail-go-pro__comparison__table-group-title {
+    background-color: #333333;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    position: sticky;
+    z-index: 10;
+
+    &::before {
+        position: absolute;
+        content: '';
+        inset-block: -30px 0;
+        inset-inline: 0;
+        border-radius: 0;
+        box-shadow: 0 15px 15px 0 #fff;
+    }
+    &::after {
+        position: absolute;
+        content: '';
+        inset-block: 0 -30px;
+        inset-inline: 0;
+        border-radius: 0;
+        box-shadow: 0 -40px 15px 0 #fff;
+    }
+}
+
+.yaymail-go-pro__comparison__table__current-plan-button {
+    background-color: #fafafa !important;
+    color: #aaacba !important;
+    font-weight: 300 !important;
+    border-color: #edeef9 !important;
+
+    &:hover {
+        background-color: #fafafa !important;
+        color: #aaacba !important;
+        border-color: #edeef9 !important;
+
+        &::before {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .yaymail-go-pro__comparison__table-group-title {
+        top: 70px !important;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .yaymail-go-pro__comparison__table-item__placeholder {
+        display: none;
+    }
+}

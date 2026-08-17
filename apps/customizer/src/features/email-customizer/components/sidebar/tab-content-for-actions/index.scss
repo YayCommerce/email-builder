@@ -1,0 +1,42 @@
+.yaymail-list-actions {
+  display: flex;
+  flex-direction: column-reverse;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--yaymail-sidebar-backgroundHistoryItem-default);
+    border-radius: 7px;
+    box-sizing: border-box;
+    padding: 9px 9px;
+    cursor: pointer;
+    padding-left: 20px;
+  }
+
+  &__item:nth-child(2n) {
+    margin: 10px 0;
+  }
+
+  &__item:hover,
+  &__item__active {
+    background: var(--yaymail-sidebar-backgroundHistoryItem-hover);
+  }
+
+  .yaymail-item-name-element {
+    font-weight: 500;
+  }
+
+  .yaymail-item-attribute {
+    font-weight: lighter;
+  }
+
+  .yaymail-item-type {
+    font-style: italic;
+
+    &-content {
+      text-decoration: underline;
+      text-transform: capitalize;
+    }
+  }
+}

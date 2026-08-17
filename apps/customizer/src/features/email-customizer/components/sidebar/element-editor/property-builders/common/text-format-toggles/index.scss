@@ -1,0 +1,85 @@
+@use '@src/assets/styles/mixins' as *;
+
+$color-blackadder: var(--yaymail-color-blackadder);
+$color-gluon-grey: #1a1c1d;
+$border-radius: var(--yaymail-sidebar-border-radius-md);
+
+.yaymail-editor-property-text-format-toggles {
+  .yaymail-text-format-toggles {
+    display: flex;
+    gap: 0;
+    height: 40px;
+
+    @include box-shadow(none);
+  }
+
+  .yaymail-text-format-toggles__btn {
+    align-items: center;
+    background-color: $color-gluon-grey;
+    border: 1px solid transparent;
+    color: #545657;
+    cursor: pointer;
+    display: flex;
+    flex: 1 1 0;
+    font-size: 14px;
+    justify-content: center;
+    line-height: 1;
+    margin: 0;
+    min-height: 40px;
+    padding: 0;
+    transition:
+      background-color 0.15s ease,
+      color 0.15s ease,
+      border-color 0.15s ease;
+
+    &:first-child {
+      border-end-start-radius: $border-radius;
+      border-start-start-radius: $border-radius;
+    }
+
+    &:last-child {
+      border-end-end-radius: $border-radius;
+      border-start-end-radius: $border-radius;
+    }
+
+    &:hover {
+      background-color: var(--yaymail-sidebar-controlBackground-hover);
+      color: var(--yaymail-color-white);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      border-color: var(--yaymail-color-wcPurple-default);
+      box-shadow: 0 0 0 1px var(--yaymail-color-wcPurple-default);
+      position: relative;
+      z-index: 1;
+    }
+
+    &.is-active {
+      background-color: $color-blackadder;
+      color: var(--yaymail-color-white);
+    }
+
+    &.is-active:focus-visible {
+      border-color: var(--yaymail-color-wcPurple-default);
+      box-shadow: 0 0 0 1px var(--yaymail-color-wcPurple-default);
+    }
+  }
+
+  .yaymail-text-format-toggles__label {
+    display: inline-block;
+    user-select: none;
+  }
+
+  .yaymail-text-format-toggles__label--italic {
+    font-style: italic;
+  }
+
+  .yaymail-text-format-toggles__label--underline {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+}

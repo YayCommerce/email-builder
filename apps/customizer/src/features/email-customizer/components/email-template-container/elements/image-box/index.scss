@@ -1,0 +1,38 @@
+.yaymail-chosen-element {
+  .yaymail-table-image-box {
+    td {
+      width: 50%;
+      &.active {
+        box-shadow: inset 0 0 0 1px #d5d2d2;
+        -webkit-box-shadow: inset 0 0 0 1px #d5d2d2;
+        -moz-box-shadow: inset 0 0 0 1px #d5d2d2;
+      }
+    }
+  }
+}
+.yaymail-table-image-box {
+  td {
+    width: 50%;
+    &:hover {
+      box-shadow: inset 0 0 0 1px #d5d2d2;
+      -webkit-box-shadow: inset 0 0 0 1px #d5d2d2;
+      -moz-box-shadow: inset 0 0 0 1px #d5d2d2;
+    }
+    &.active:hover {
+      box-shadow: inset 0 0 0 1px #d5d2d2;
+      -webkit-box-shadow: inset 0 0 0 1px #d5d2d2;
+      -moz-box-shadow: inset 0 0 0 1px #d5d2d2;
+    }
+  }
+  .yaymail-customizer-element-image-box {
+    &__anchor {
+      display: block;
+      pointer-events: none;
+    }
+
+    img {
+      max-width: 100%;
+      // width: inherit;
+    }
+  }
+}

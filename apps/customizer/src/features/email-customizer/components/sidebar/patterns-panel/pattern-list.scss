@@ -1,0 +1,80 @@
+.yaymail-pattern-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .yaymail-pattern-item-wrapper {
+    width: 100%;
+  }
+
+  .yaymail-pattern-item {
+    position: relative;
+    height: fit-content;
+    gap: 10px;
+    width: calc(var(--yaymail-sidebar-width) - 20px);
+    background-color: #212223;
+
+    &__preview {
+      height: fit-content;
+      position: relative;
+      transform: scale(var(--yaymail-pattern-preview-iframe-scale, 0.31));
+      left: 0;
+      margin: 0;
+      min-height: auto;
+      overflow: visible;
+      text-align: initial;
+      top: 0;
+      width: 100%;
+      &:dir(rtl) {
+        transform-origin: top right;
+      }
+      &:dir(ltr) {
+        transform-origin: top left;
+      }
+
+      .yaymail-customizer-element-nested-column-content:empty {
+        border: none !important;
+        &::after {
+          display: none !important;
+        }
+      }
+    }
+
+    &__name {
+      color: rgba(248, 250, 251, 0.25) !important;
+      text-align: center;
+      width: calc(100% - 30px);
+      transition: color 0.3s ease;
+    }
+
+    &__delete-icon-wrapper {
+      position: absolute;
+      bottom: 8px;
+      right: 10px;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      z-index: 1;
+
+      .yaymail-pattern-item__delete-icon {
+        padding: 5px;
+      }
+    }
+
+    &:hover {
+      background-color: #2e3031;
+      .yaymail-pattern-item__delete-icon-wrapper {
+        opacity: 1;
+      }
+      .yaymail-pattern-item__name {
+        color: #f8fafb !important;
+      }
+    }
+
+    .yaymail-customizer-email-template-container {
+      min-height: unset;
+      width: var(--yaymail-pattern-preview-iframe-width, 900px);
+      user-select: none;
+      pointer-events: none;
+    }
+  }
+}

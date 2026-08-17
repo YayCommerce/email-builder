@@ -1,0 +1,27 @@
+$yaymail-sm: 600px;
+$yaymail-md: 783px;
+$yaymail-lg: 961px;
+
+@mixin extra_small {
+  @media (max-width: #{$yaymail-sm - 1px}) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media (max-width: #{$yaymail-md - 1px}) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media (min-width: #{$yaymail-md}) and (max-width: #{$yaymail-lg - 1px}) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: #{$yaymail-lg}) {
+    @content;
+  }
+}

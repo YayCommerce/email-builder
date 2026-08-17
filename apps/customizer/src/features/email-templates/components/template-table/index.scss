@@ -1,0 +1,33 @@
+.yaymail-table-tbody {
+  td.yaymail-table-selection-column {
+    padding: 1.5rem !important;
+  }
+}
+
+.yaymail-badge {
+  text-transform: capitalize;
+}
+
+.yaymail-notification-notice-message {
+  margin-bottom: 0px !important;
+}
+
+.yaymail-templates-filter-wrapper {
+  padding: 12px;
+
+  .yaymail-templates-filter-search {
+    display: flex;
+
+    .yaymail-input {
+      min-height: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 782px) {
+  .yaymail-table-tbody {
+    td.yaymail-table-selection-column {
+      width: 10% !important;
+    }
+  }
+}

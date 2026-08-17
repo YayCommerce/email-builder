@@ -1,0 +1,117 @@
+.yaymail-editor-property-cross-link {
+  color: var(--yaymail-color-antarctica);
+  cursor: pointer;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__tooltip-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+}
+
+.yaymail-tooltip.yaymail-conditional-logic-cross-link-tooltip {
+  max-width: 500px;
+  cursor: pointer;
+}
+
+.yaymail-cross-sell-cta-1 {
+  margin-top: 1rem;
+  padding: 16px;
+  border-radius: 9px;
+  background: linear-gradient(134deg,rgba(255, 255, 255, 0.15) -1.45%, rgba(255, 255, 255, 0.40) 40%, rgba(255, 255, 255, 0.35) 50%, #1F2123 83.93%);
+  color: #ffffff;
+
+  &__img {
+    max-width: 100%;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 14px;
+  }
+  &__description {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.70);
+    font-size: 12px;
+  }
+  &__link {
+    text-decoration: underline;
+    color: rgba(255, 255, 255, 0.70);
+    text-align: center;
+    cursor: pointer;
+    text-underline-offset: 4px;
+    margin-bottom: 0;
+
+    &:hover {
+      color: #FFFFFF;
+    }
+  }
+}
+
+.yaymail-cross-sell-cta-1__button,
+.yaymail-cross-sell-modal__button {
+  background: #FFC900;
+  width: 100%;
+  border-color: #ffc900;
+  color: #000000;
+  height: 34px;
+  &:hover {
+    background: #ebbb0f !important;
+    border-color: #ebbb0f !important;
+    color: #000000 !important;
+  }
+}
+
+.yaymail-cross-sell-modal {
+  .yaymail-modal-content {
+    padding: 0;
+    padding-bottom: 34px;
+  }
+  
+  .yaymail-cross-sell-modal__content {
+    margin: 34px auto 0 auto;
+    text-align: center;
+    max-width: 810px;
+    text-align: center;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 24px;
+    margin: 0;
+  }
+
+  &__description {
+    font-size: 18px;
+    color: #636363;
+    font-weight: 300;
+    margin: 10px 0 20px 0;
+  }
+
+  &__button {
+    height: 54px;
+    width: fit-content;
+    padding: 13px 32px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .yaymail-modal-close {
+    top: -38px;
+    right: 0;
+    border-radius: 100%;
+    background-color: #FFFFFF;
+    svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    &:hover {
+      background-color: #ffffff;
+    }
+  }
+}

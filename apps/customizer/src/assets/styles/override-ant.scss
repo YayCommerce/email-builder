@@ -1,0 +1,156 @@
+@use '@src/assets/styles/mixins' as *;
+
+/* Table */
+.yaymail-table {
+  // @include box-shadow(0px 0px 40px var(--yaymail-boxShadow-color));
+  border: 1px solid #f0f0f0;
+  overflow: hidden;
+  border-radius: 8px !important;
+}
+
+.yaymail-btn--icon-only {
+  color: #86878f;
+  border-radius: 6px;
+}
+
+.yaymail-navlink:hover {
+  color: var(--yaymail-color-wcPurple-dark) !important;
+}
+
+.yaymail-popover.ant-color-picker,
+.ant-popover.ant-color-picker {
+  &.yaymail-popover-placement-bottomLeft,
+  &.yaymail-popover-placement-bottomRight {
+    .yaymail-popover-arrow {
+      top: 1px !important;
+    }
+  }
+
+  input[type='text'] {
+    min-height: unset !important;
+  }
+}
+
+.yaymail-btn {
+  box-shadow: none;
+}
+
+.yaymail-btn-default:disabled {
+  background-color: initial;
+  opacity: 0.4;
+  color: var(--yaymail-button-color-grey-200);
+}
+
+.yaymail-btn-default:not(:disabled):hover,
+.yaymail-btn-default:not(:disabled)[class*='_yaymail-button-active'],
+.yaymail-btn-default:not(:disabled):active {
+  border-color: #333333;
+  color: #333333;
+}
+
+.yaymail-btn-default:not(:disabled):active {
+  box-shadow:
+    0px 1px 2px rgba(0, 0, 0, 0.05),
+    0px 0px 0px 3px rgba(0, 0, 0, 0.1);
+}
+
+.yaymail-btn-primary:disabled {
+  border-color: #dddbe0;
+  background-color: #f5f5f5;
+  color: #9ba1a7;
+}
+
+.yaymail-btn-text:disabled {
+  color: var(--yaymail-color-antarctica);
+}
+
+.yaymail-tab-name {
+  @include prevent-select;
+}
+
+.yaymail-select-item-empty {
+  padding: 5px;
+}
+
+// wp-admin/forms.css sets min-height: 40px, border, background, padding, line-height: 2 on
+// text inputs via `body.wp-admin input[type=text]` (specificity 0,2,1). Ant Design's affix-
+// wrapper inner-input selector is only (0,2,0), so WP wins without !important overrides.
+.yaycommerce_page_yaymail-settings,
+.yaycommerce_page_email-builder-settings {
+  .yaymail-input,
+  input.yaymail-select-selection-search-input {
+    box-shadow: none !important;
+    outline: none !important;
+    min-height: unset !important;
+    line-height: normal !important;
+  }
+  .yaymail-input {
+    padding: 4px 11px !important;
+  }
+  .yaymail-input-affix-wrapper > .yaymail-input {
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+  }
+}
+
+.yaymail-table-wrapper .yaymail-table-filter-trigger {
+  padding: 0 0.5rem;
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+//Remove outline when button has focus-visible state
+button {
+  &.yaymail-switch:focus-visible,
+  &.yaymail-btn:focus-visible {
+    outline: none !important;
+  }
+}
+
+.yaymail-dropdown {
+  z-index: calc(var(--yaymail-headerIndex) - 1);
+}
+
+.yaymail-tour-mask--masking {
+  pointer-events: auto !important;
+}
+
+.yaymail-link--light {
+  color: rgba(155, 161, 167, 1);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    text-decoration: underline !important;
+    color: rgba(248, 250, 251, 1) !important;
+    text-decoration-color: rgba(248, 250, 251, 1) !important;
+  }
+}
+
+.yaymail-btn--light[disabled] {
+  border: none;
+  background-color: rgba(248, 250, 251, 1);
+  color: rgba(51, 51, 51, 1);
+  font-weight: 500;
+  min-width: 165px;
+  opacity: 0.4;
+}
+
+.yaymail-tooltip {
+  max-width: 300px;
+  font-size: 13px !important;
+}
+
+.yaymail-switch .yaymail-switch-inner .yaymail-switch-inner-checked,
+.yaymail-switch .yaymail-switch-inner .yaymail-switch-inner-unchecked {
+  font-size: 10px;
+}
+
+.yaymail-select-show-search.yaymail-select-open .yaymail-select-selection-placeholder {
+  display: none;
+}

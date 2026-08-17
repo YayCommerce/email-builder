@@ -1,0 +1,88 @@
+@use '@src/assets/styles/mixins' as *;
+
+.js-wc-plugin-framework-admin-notice {
+  display: none !important;
+}
+
+a {
+  text-decoration: none;
+
+  color: var(--yaymail-color-wcPurple-default);
+  font-family: sans-serif;
+
+  @include transition-color();
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: var(--yaymail-color-wcPurple-dark);
+  }
+}
+.yaycommerce_page_yaymail-settings__customizer {
+  overflow: hidden !important;
+}
+.yaycommerce_page_yaymail-settings,
+.yaycommerce_page_email-builder-settings {
+  --yaymail-wp-adminBar-width: var(--yaymail-wp-adminBar-width-lg);
+
+  @media screen and (max-width: 960px) {
+    --yaymail-wp-adminBar-width: var(--yaymail-wp-adminBar-width-md);
+  }
+
+  @media screen and (max-width: 782px) {
+    --yaymail-wp-adminBar-width: var(--yaymail-wp-adminBar-width-sm);
+  }
+
+  #wpcontent,
+  #wpfooter {
+    margin-left: var(--yaymail-wp-adminBar-width);
+    padding: 0;
+  }
+}
+
+.yaymail-tooltip-content {
+  .yaymail-tooltip-inner {
+    text-align: center;
+  }
+}
+
+#wpbody-content {
+  float: none;
+  padding: 0;
+
+  > *:not(#yaymail-main-pages) {
+    display: none;
+  }
+}
+
+#wpbody {
+  padding-top: 0px;
+}
+
+.yaymail-pre-loading {
+  display: none;
+}
+
+body.wp-admin a:focus {
+  @include box-shadow(none);
+}
+
+@media screen and (max-width: 960px) {
+  .yaycommerce_page_yaymail-settings,
+  .yaycommerce_page_email-builder-settings {
+    #wpcontent,
+    #wpfooter {
+      margin-left: var(--yaymail-wp-adminBar-width-md);
+    }
+  }
+}
+
+@media screen and (max-width: 782px) {
+  .yaycommerce_page_yaymail-settings,
+  .yaycommerce_page_email-builder-settings {
+    #wpcontent,
+    #wpfooter {
+      margin-left: var(--yaymail-wp-adminBar-width-sm);
+    }
+  }
+}

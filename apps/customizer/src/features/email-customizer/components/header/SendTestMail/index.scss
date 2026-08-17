@@ -1,0 +1,87 @@
+.yaymail-send-test-mail__modal {
+  .yaymail-modal-body {
+    padding: 0;
+  }
+  .modal__content {
+    .yaymail-send-email {
+      padding: 16px;
+      h4 {
+        font-weight: 400;
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+
+      .yaymail-send-email__content {
+        display: flex;
+
+        &__text {
+          margin-inline-end: 10px;
+          border-radius: 6px;
+        }
+
+        &__text:focus {
+          border-color: #a666ff !important;
+          border-inline-end-width: 1px !important;
+          box-shadow: none;
+        }
+      }
+
+      .yaymail-send-email__success {
+        display: flex;
+        margin-bottom: 0;
+        &__icon {
+          margin-right: 5px;
+        }
+        .yaymail-link-gmail {
+          text-decoration: underline;
+        }
+
+        .yaymail-link-gmail:hover {
+          text-decoration: none;
+        }
+      }
+    }
+    .yaymail-recommend-content {
+      padding: 16px;
+      background-color: #f6f7f7;
+      h4 {
+        margin-top: 0;
+      }
+      .yaymail-recommend {
+        display: flex;
+
+        &__smtp__img {
+          margin-right: 20px;
+        }
+
+        &__smtp__title {
+          color: #216fb1;
+          margin-top: 0;
+          margin-bottom: 6px;
+        }
+
+        &__smtp__detail {
+          font-size: 14px;
+          margin-right: 5px;
+          height: 40px;
+        }
+
+        &__smtp__btn-install {
+          font-size: 14px;
+        }
+
+        .yaymail-btn-loading-icon {
+          margin-right: 3px;
+        }
+      }
+    }
+  }
+}
+
+.yaymail-recommend__smtp__notifications.yaymail-notification-notice-success {
+  min-width: 422px;
+}
+
+.plugin-details-modal {
+  height: auto !important;
+}

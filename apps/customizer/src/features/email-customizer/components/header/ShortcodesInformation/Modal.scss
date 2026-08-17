@@ -1,0 +1,106 @@
+.yaymail-shortcodes-information__modal {
+  .yaymail-modal {
+    &-body {
+      height: max(50vh, 300px);
+      overflow-y: scroll;
+      padding: 2rem;
+    }
+  }
+
+  .yaymail-modal-close {
+    top: 15px;
+  }
+
+  .modal__header {
+    &--search {
+      min-width: 100px;
+      max-width: 200px;
+      font-weight: 500;
+    }
+  }
+
+  .modal__content {
+    &__shortcode-group {
+      margin-bottom: 2rem;
+      border-collapse: collapse;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &__title {
+        margin: 0;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+      }
+
+      .shortcode-item {
+        &__name {
+          width: 50%;
+          cursor: copy;
+        }
+      }
+
+      &__table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        table-layout: auto;
+
+        td {
+          padding: 14px;
+          border: 1px solid var(--yaymail-color-grey-300);
+          text-align: left;
+          border-inline-end-width: 0;
+          border-bottom-width: 0;
+          transition: background 0.2s ease-in-out;
+        }
+
+        tr {
+          td:last-child {
+            border-inline-end-width: 1px !important;
+          }
+
+          &:first-child {
+            td:first-child {
+              border-start-start-radius: 6px;
+            }
+
+            td:last-child {
+              border-start-end-radius: 6px;
+            }
+          }
+
+          &:last-child {
+            td:first-child {
+              border-end-start-radius: 6px;
+            }
+
+            td:last-child {
+              border-end-end-radius: 6px;
+            }
+          }
+        }
+
+        tr:last-child {
+          td {
+            border-bottom-width: 1px;
+          }
+        }
+
+        tr:hover {
+          td {
+            background: var(--yaymail-color-grey-100);
+          }
+        }
+      }
+    }
+  }
+
+  .yaymail-shortcodes-information__modal__empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+}

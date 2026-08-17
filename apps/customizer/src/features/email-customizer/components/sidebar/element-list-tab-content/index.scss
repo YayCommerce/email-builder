@@ -1,0 +1,96 @@
+@use '@src/assets/styles/mixins' as *;
+
+$text-color: var(--yaymail-color-antarctica);
+$background-color: rgba(0, 0, 0, 0.25);
+$background-color-focused: #111213;
+$icon-color: rgb(85, 85, 85);
+$placeholder-color: rgb(125, 125, 125);
+
+.yaymail-customizer-tab-elements {
+  height: inherit;
+  width: 100%;
+
+  /* Override Antd's style */
+  .yaymail-custom-search {
+    border-radius: var(--yaymail-sidebar-border-radius-md);
+    background-color: $background-color;
+    border: none;
+    padding: 3px 14px;
+    transition: background-color 0.1s ease-in-out !important;
+
+    .yaymail-input,
+    .yaymail-input-suffix,
+    .yaymail-input-suffix * {
+      transition: background-color 0.1s ease-in-out !important;
+    }
+
+    .yaymail-input-suffix {
+      cursor: pointer;
+
+      svg {
+        fill: $icon-color;
+      }
+    }
+
+    &.yaymail-input-affix-wrapper-focused {
+      @include box-shadow(none !important);
+      background-color: $background-color-focused;
+    }
+
+    .yaymail-input {
+      outline: none;
+      background-color: transparent;
+
+      &::placeholder {
+        color: $placeholder-color;
+        opacity: 0.4;
+      }
+    }
+
+    & * {
+      border: none;
+      border-radius: var(--yaymail-sidebar-border-radius-md);
+
+      color: $text-color !important;
+      background-color: transparent;
+    }
+  }
+
+  .search-result {
+    background-color: rgb(38, 41, 43);
+    border-radius: var(--yaymail-sidebar-border-radius-lg);
+
+    .yaymail-collapse-header {
+      display: none;
+    }
+
+    .yaymail-collapse-content-box > *:first-child {
+      border-top: none;
+    }
+  }
+
+  .empty-search-result {
+    &__message {
+      color: $text-color;
+    }
+
+    ellipse {
+      fill: var(--yaymail-sidebar-controlBackground-default);
+    }
+
+    path[fill='#fafafa'] {
+      fill: var(--yaymail-sidebar-controlBackground-default);
+    }
+
+    g[stroke='#d9d9d9'] {
+      stroke: $text-color;
+      opacity: 0.9;
+    }
+  }
+
+  .yaymail-custom-collapse__single {
+    .yaymail-sortable-elements-container {
+      border-top: none;
+    }
+  }
+}

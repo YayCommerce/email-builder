@@ -1,0 +1,14 @@
+.yaymail-edit-zone {
+  outline: none;
+  min-height: 1em;
+  cursor: inherit;
+
+  &--allowed {
+    cursor: text;
+  }
+
+  &--editing {
+    cursor: text;
+    outline: none;
+  }
+}

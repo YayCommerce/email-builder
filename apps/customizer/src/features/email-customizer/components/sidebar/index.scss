@@ -1,0 +1,505 @@
+@use '@src/assets/styles/mixins' as *;
+
+$header-height: var(--yaymail-sidebar-headerFooterHeight);
+$title-font-weight: 500;
+
+$text-color: var(--yaymail-color-white);
+
+$sidebar-background: var(--yaymail-sidebar-background);
+$sidebar-control-background: var(--yaymail-sidebar-controlBackground-default);
+$sidebar-control-background-hover: var(--yaymail-sidebar-controlBackground-hover);
+
+$sidebar-border-radius-lg: var(--yaymail-sidebar-border-radius-lg);
+$sidebar-border-radius-md: var(--yaymail-sidebar-border-radius-md);
+$sidebar-padding: var(--yaymail-sidebar-padding);
+$woocommerce-purple: var(--yaymail-color-wcPurple-default);
+$sidebar-width: var(--yaymail-sidebar-width);
+$sidebar-grey-light: var(--yaymail-sidebar-color-grey-light);
+$sidebar-padding-inline-start: var(--yaymail-sidebar-paddingInlineStart);
+
+.yaymail-customizer {
+  &-tab-content {
+    height: inherit;
+    width: 100%;
+  }
+
+  &-sidebar {
+    background-color: $sidebar-background;
+    height: 100%;
+    position: relative;
+    transition:
+      margin-left 0.4s ease-out,
+      margin-right 0.4s ease-out;
+    width: $sidebar-width;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &.close {
+      &:dir(ltr) {
+        margin-left: calc($sidebar-width * -1);
+        .yaymail-customizer-sidebar__toggler__icon {
+          transform: rotate(180deg);
+        }
+      }
+      &:dir(rtl) {
+        margin-right: calc($sidebar-width * -1);
+        .yaymail-customizer-sidebar__toggler__icon {
+          transform: rotate(0deg);
+        }
+      }
+    }
+
+    &__header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: $woocommerce-purple;
+      font-weight: $title-font-weight;
+      height: $header-height;
+      padding: $sidebar-padding;
+
+      & > * {
+        color: $text-color;
+        font-size: 13px;
+      }
+
+      & > a {
+        &:hover,
+        &:active,
+        &:focus {
+          color: $text-color;
+          opacity: 0.5;
+        }
+      }
+    }
+
+    &__title {
+      font-weight: 500;
+    }
+
+    &__button {
+      button {
+        display: inline-flex !important;
+        align-items: center;
+        gap: 4px !important;
+        padding: 4px 6px !important;
+        font-size: 10px !important;
+        font-weight: 600;
+        height: 20px !important;
+        background-color: #ffa600;
+        border-radius: 2px !important;
+        color: #ffffff;
+        position: relative;
+        .yaymail-btn-icon {
+          margin-inline-end: 0 !important;
+          svg {
+            width: 12px;
+            height: 12px;
+          }
+        }
+        &:hover {
+          background-color: #ffa600 !important;
+          color: #ffffff;
+        }
+
+        &::before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0;
+          visibility: hidden;
+          z-index: 2;
+          background: #000;
+          transition: all 0.3s ease-in-out;
+          border-radius: 2px;
+        }
+
+        &:hover::before {
+          opacity: 0.1;
+          visibility: visible;
+        }
+      }
+    }
+
+    &__icon {
+      @include center-vertically-with-flex();
+    }
+
+    &__toggler {
+      background-color: $sidebar-control-background;
+      cursor: pointer;
+      height: auto;
+      &:dir(rtl) {
+        right: $sidebar-width;
+        border-radius: $sidebar-border-radius-md 0px 0px $sidebar-border-radius-md;
+      }
+      &:dir(ltr) {
+        border-radius: 0px $sidebar-border-radius-md $sidebar-border-radius-md 0px;
+        left: $sidebar-width;
+      }
+      padding: 12px 3px;
+      position: absolute;
+      z-index: 10;
+      top: 50%;
+      width: auto;
+      z-index: 3;
+      @include transition-background-color();
+
+      &:hover {
+        background-color: $sidebar-control-background-hover;
+      }
+
+      &__icon {
+        &:dir(rtl) {
+          transform: rotate(180deg);
+        }
+        transition: transform 0.5s $default-transition-effect;
+      }
+    }
+
+    &__editor-wrapper {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      min-height: 0;
+      overflow: hidden;
+      overflow: clip;
+      background-color: inherit;
+      z-index: calc(var(--yaymail-headerIndex) + 2);
+    }
+
+    &__body {
+      flex-grow: 1;
+
+      .yaymail-custom-tab-header {
+        margin: 10px 7px;
+      }
+
+      /* Override Antd's tab style */
+      .yaymail-customizer-sidebar {
+        &__main-tabs {
+          height: 100%;
+
+          .yaymail-tabs-nav-list .yaymail-tabs-tab-btn .anticon {
+            margin-left: 0;
+            margin-right: 0;
+          }
+
+          .yaymail-collapse-header {
+            padding: 14px 16px;
+            padding-inline-start: $sidebar-padding-inline-start !important;
+            color: $text-color;
+          }
+
+          .yaymail-switch {
+            background: rgba(248, 250, 251, 0.1);
+
+            &-inner {
+              & > * {
+                color: rgba(248, 250, 251, 1);
+                font-size: 10px;
+                font-weight: 500;
+              }
+            }
+
+            &-handle {
+              &::before {
+                background-color: rgba(248, 250, 251, 1);
+                width: 18px;
+                height: 18px;
+                margin-top: 1px;
+              }
+            }
+
+            &.yaymail-switch-checked {
+              &.yaymail-switch {
+                background-color: $woocommerce-purple;
+
+                .yaymail-switch-inner {
+                  & > * {
+                    color: rgba(248, 250, 251, 1);
+                  }
+                }
+
+                .yaymail-switch-handle {
+                  &::before {
+                    background-color: rgba(248, 250, 251, 1);
+                  }
+                }
+              }
+            }
+          }
+
+          &__element,
+          &__history {
+            .yaymail-tabs-tab {
+              width: 40%;
+            }
+
+            .yaymail-tabs-tab:nth-child(3) {
+              flex: 1;
+            }
+          }
+
+          &__history {
+            .yaymail-tabs-tab {
+              width: 50%;
+            }
+          }
+
+          .yaymail-tab-name {
+            text-shadow: none;
+          }
+
+          .yaymail-input-number {
+            background-color: var(--yaymail-input-sidebarBackground);
+
+            &:hover {
+              .yaymail-input-number-handler-wrap {
+                opacity: 1;
+              }
+            }
+
+            &-input {
+              color: $text-color;
+            }
+
+            &-handler-wrap {
+              position: absolute;
+              border-radius: 2px;
+              inset-block-start: 0;
+              inset-inline-end: 0;
+              width: 22px;
+              height: 100%;
+              background: #ffffff;
+              border-start-start-radius: 0;
+              border-start-end-radius: 6px;
+              border-end-end-radius: 6px;
+              border-end-start-radius: 0;
+              opacity: 0;
+              transition: opacity 0.2s linear 0.2s;
+              &:hover {
+                opacity: 1;
+              }
+            }
+
+            &-handler {
+              border-inline-start: none;
+
+              &:hover {
+                svg {
+                  color: #191c1d;
+                }
+              }
+            }
+          }
+
+          .yaymail-select-selector {
+            background-color: var(--yaymail-input-sidebarBackground);
+            border: none;
+
+            .yaymail-select-selection-item {
+              color: $text-color;
+            }
+          }
+
+          .yaymail-select-arrow {
+            color: #7d7d7d;
+          }
+        }
+      }
+
+      .yaymail-tab-name {
+        text-shadow: none;
+        text-transform: uppercase;
+        position: relative;
+        display: inline-block;
+      }
+
+      .yaymail-tabs-nav {
+        background-color: $sidebar-grey-light;
+        height: 42px;
+        box-sizing: content-box;
+        padding: 4px;
+        border-radius: $sidebar-border-radius-lg;
+
+        &-list {
+          width: 100%;
+          justify-content: space-between;
+          font-weight: 600;
+          color: $text-color;
+
+          .yaymail-tabs-tab {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $text-color;
+
+            &-btn:focus {
+              color: $text-color;
+            }
+          }
+
+          & * {
+            transition: none !important;
+          }
+
+          .yaymail-collapse-header-text {
+            color: $text-color;
+          }
+
+          .yaymail-tabs-tab-active {
+            background-color: #f8fafb !important;
+
+            .yaymail-tabs-tab-btn {
+              color: $woocommerce-purple;
+              margin: 0 auto;
+            }
+          }
+
+          .anticon {
+            margin: 0;
+          }
+
+          .yaymail-tabs-tab {
+            border-radius: $sidebar-border-radius-lg !important;
+
+            &:hover {
+              background-color: rgb(248, 250, 251, 6%);
+              color: #e6e8eb;
+            }
+          }
+        }
+      }
+
+      .yaymail-tabs-content-holder {
+        border-top: 1px solid $sidebar-grey-light;
+        color: $text-color;
+        height: 100%;
+
+        .yaymail-tabs-content-top {
+          height: inherit;
+
+          .yaymail-tabs-tabpane-active {
+            height: inherit;
+          }
+        }
+      }
+
+      .yaymail-collapse-expand-icon {
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+
+      .yaymail-collapse-item-name-badge {
+        position: absolute;
+        margin-inline-start: 5px;
+        display: inline-flex;
+      }
+    }
+
+    &__footer {
+      align-items: center;
+      display: flex;
+      font-weight: $title-font-weight;
+      height: $header-height;
+      justify-content: space-between;
+      padding: $sidebar-padding;
+
+      & > a {
+        @include center-vertically-with-flex();
+      }
+
+      &__btn-back {
+        cursor: pointer;
+        font-family:
+          -apple-system,
+          BlinkMacSystemFont,
+          Segoe UI,
+          Roboto,
+          Oxygen-Sans,
+          Ubuntu,
+          Cantarell,
+          Helvetica Neue,
+          sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        color: rgba(170, 172, 186, 1);
+        text-transform: uppercase;
+        @include center-vertically-with-flex();
+
+        & > span:not(:first-child) {
+          margin-inline-start: 10px;
+        }
+
+        .yaymail-customizer-sidebar__footer__icon-back:dir(rtl) {
+          transform: rotate(180deg);
+        }
+
+        &:hover {
+          .yaymail-customizer-sidebar__footer__icon-back {
+            &:dir(ltr) {
+              transform: translateX(-4px);
+            }
+            &:dir(rtl) {
+              transform: rotate(180deg) translateX(-4px);
+            }
+          }
+
+          color: rgba(255, 255, 255, 1);
+        }
+      }
+
+      &__icon-back {
+        font-size: 18px;
+        transition: transform 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+      }
+
+      .yaymail-customizer-sidebar__footer__btn-history {
+        background: rgba(255, 255, 255, 0.06);
+        color: rgba(170, 172, 186, 1);
+
+        &:hover {
+          background: rgba(255, 255, 255, 1);
+          color: $woocommerce-purple;
+        }
+      }
+    }
+
+    .yaymail-tab-name {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      justify-content: center;
+    }
+  }
+}
+
+.yaymail-select-selection-item {
+  .check {
+    display: none !important;
+  }
+}
+
+.yaymail-sidebar-custom-select-option {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .check {
+    display: none;
+  }
+
+  &:hover {
+    .check {
+      display: inline-block;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+}

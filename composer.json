@@ -1,0 +1,27 @@
+{
+  "name": "yaycommerce/email-builder",
+  "type": "wordpress-plugin",
+  "require": {
+    "yaycommerce/admin-shell": "^2.5"
+  },
+  "repositories": [
+    {
+      "name": "admin-shell",
+      "type": "vcs",
+      "url": "https://github.com/YayCommerce/yaycommerce-plugin-admin-shell.git"
+    }
+  ],
+  "require-dev": {
+    "humbug/php-scoper": "^0.18.18",
+    "thecodingmachine/safe": "^3.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "YayMail\\WP\\": "core/"
+    },
+    "classmap": [
+      "vendor-prefixed/src",
+      "EmailBuilderPluginAdapter.php"
+    ]
+  }
+}

@@ -1,0 +1,160 @@
+$border-width: 1px;
+$outline-width: 0.5px;
+
+.yaymail-addons-filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 30px;
+
+  &--no-categories {
+    justify-content: flex-end;
+  }
+
+  .yaymail-addons-filters__categories-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .yaymail-addons-filters__arrow {
+    position: absolute;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+    color: #495057;
+    z-index: 1;
+
+    svg {
+      display: block;
+      z-index: 1;
+    }
+
+    &--right {
+      right: 0;
+    }
+
+    &--right::after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 150px;
+      right: 0;
+      background: linear-gradient(270deg, #f0f0f1 30%, rgba(240, 240, 241, 0.122) 100%);
+    }
+
+    &--left::before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 150px;
+      left: 0;
+      background: linear-gradient(90deg, #f0f0f1 30%, rgba(240, 240, 241, 0.122) 100%);
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  .yaymail-addons-filters__categories {
+    overflow: auto;
+    white-space: nowrap;
+    padding: calc($border-width + $outline-width);
+
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .yaymail-addons-filters__statuses {
+    display: flex;
+    gap: 0;
+    padding: 3px;
+    background-color: #e7e7eb;
+    border-radius: 100px;
+    height: fit-content;
+    width: fit-content;
+  }
+
+  .yaymail-addons-filters__categories-item {
+    user-select: none;
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 100px;
+    border: $border-width solid #dbdde7;
+    cursor: pointer;
+    font-size: 14px;
+    color: #495057;
+    background-color: transparent;
+    transition: border 0.2s ease;
+    outline: $outline-width solid transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      color: #495057;
+      border-color: #495057;
+    }
+
+    &.active {
+      color: #1d2327;
+      border-color: #1d2327;
+      outline-color: #1d2327;
+      filter: drop-shadow(0px 5px 25px rgba(0, 0, 0, 0.05));
+    }
+  }
+
+  .yaymail-addons-filters__statuses-item {
+    padding: 5px 12px;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #495057;
+    background-color: transparent;
+    transition: all 0.2s ease;
+
+    &.active {
+      color: #1d2327;
+      background-color: #ffffff;
+      box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    flex-wrap: wrap;
+
+    .yaymail-addons-filters__categories-wrapper {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .yaymail-addons-filters__categories {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      row-gap: 10px;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.yaymail-darkmode-switch-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .yaymail-switch {
+        outline: 1px solid var(--yaymail-color-wcPurple-default);
+
+        &[aria-checked="false"] {
+            .yaymail-switch-handle::before {
+                background-color: var(--yaymail-color-wcPurple-default);
+            }
+
+        }
+    }
+
+    .yaymail-dark-mode-switch-label {
+        color: #929393;
+    }
+
+}

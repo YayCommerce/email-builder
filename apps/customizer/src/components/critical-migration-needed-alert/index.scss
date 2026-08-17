@@ -1,0 +1,15 @@
+.yaymail-settings-critical-migration-needed-alert {
+    margin: var(--yaymail-sidebar-headerFooterHeight);
+    margin-bottom: 0;
+    width: fit-content;
+
+    ul {
+        margin-bottom: 0;
+
+        li {
+            list-style: initial;
+            margin-bottom: initial;
+            margin-left: 1.5rem;
+        }
+    }
+}

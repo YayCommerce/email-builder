@@ -1,0 +1,37 @@
+.yaymail-go-pro__modal {
+  .yaymail-modal-content {
+    width: min(540px, 90vw);
+    border-radius: 8px !important;
+    overflow: hidden;
+  }
+
+  .yaymail-modal-header {
+    background-color: #f5e4ff;
+    border-bottom: 0 !important;
+
+    .yaymail-modal-title {
+      font-size: 14px;
+      & > :first-child {
+        padding: 12px 20px;
+      }
+    }
+  }
+
+  .yaymail-modal-close {
+    color: #9a9ca0;
+    top: 12px !important;
+    .yaymail-modal-close-x {
+      font-size: 14px;
+    }
+  }
+
+  .yaymail-modal-body {
+    padding: 30px 40px 40px !important;
+  }
+
+  .yaymail-go-pro__buy-now-button {
+    display: block;
+    width: 100%;
+    margin: 40px 0 0;
+  }
+}

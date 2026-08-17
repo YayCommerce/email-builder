@@ -1,0 +1,57 @@
+.yaymail-tab-revisions {
+  &__btn-clear {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 10px;
+  }
+  &__empty {
+    text-align: center;
+    margin-top: 2rem;
+    color: inherit;
+    .yaymail-empty-description {
+      color: inherit;
+    }
+  }
+
+  .yaymail-list-revisions {
+    &__item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--yaymail-sidebar-backgroundHistoryItem-default);
+      border-radius: 7px;
+      box-sizing: border-box;
+      padding: 9px 9px;
+      cursor: pointer;
+      font-size: 13px;
+
+      &__bold {
+        font-weight: 500;
+      }
+
+      &__lighter {
+        font-weight: lighter;
+      }
+
+      .anticon-history {
+        transition: all 0.2s ease-in;
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+
+    &__item:nth-child(2n) {
+      margin: 10px 0;
+    }
+
+    &__item:hover,
+    &__item__active {
+      background: var(--yaymail-sidebar-backgroundHistoryItem-hover);
+    }
+
+    &__item:hover .anticon-history {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

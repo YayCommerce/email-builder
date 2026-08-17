@@ -1,0 +1,20 @@
+.yaymail-customizer-preview-email__empty-content {
+    margin: auto !important;
+
+    .anticon-frown svg {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+.yaymail-customizer-preview-email__empty-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.yaymail-customizer-preview-email__message {
+    text-align: center;
+}

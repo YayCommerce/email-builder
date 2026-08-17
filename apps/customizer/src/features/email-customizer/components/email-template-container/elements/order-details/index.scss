@@ -1,0 +1,74 @@
+/* Base styling for yaymail-order-details-table */
+.yaymail-order-details-table {
+  .wc-item-meta {
+    display: block;
+    list-style-type: none;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 40px;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+.yaymail-customizer-main {
+  /* Hide elements by default */
+  .yaymail-product_image_position__bottom,
+  .yaymail-product_image_position__top,
+  .yaymail-product-short-description,
+  .yaymail-product-sku,
+  .yaymail-product-name__hyper-link,
+  .yaymail-product-regular-price,
+  .yaymail_item_cost_title,
+  .yaymail_item_cost_content,
+  .yaymail-quantity-type-modern {
+    display: none;
+  }
+
+  .yaymail-order-details-table {
+    &[data-show-product-hyper-link] .yaymail-product-name {
+      display: none;
+    }
+
+    &[data-show-product-regular-price] .yaymail-product-regular-price {
+      display: inline-block;
+    }
+
+    &[data-show-product-item-cost] {
+      & .yaymail_item_cost_title,
+      & .yaymail_item_cost_content {
+        display: table-cell;
+      }
+    }
+
+    &[data-show-product-description] .yaymail-product-short-description,
+    &[data-show-product-sku] .yaymail-product-sku,
+    &[data-show-product-hyper-link] .yaymail-product-name__hyper-link {
+      display: block;
+      float: unset !important;
+    }
+
+    &[product-image-position='left'] .yaymail-product_image_position__top {
+      display: block;
+      float: left !important;
+      margin-right: 5px !important;
+    }
+
+    &[product-image-position='right'] .yaymail-product_image_position__top {
+      display: block;
+      float: right !important;
+      margin-left: 5px !important;
+    }
+
+    &[product-image-position='bottom'] .yaymail-product_image_position__bottom,
+    &[product-image-position='top'] .yaymail-product_image_position__top,
+    &[product-image-position='top'] .yaymail-product_image_position__top .yaymail-product-image {
+      display: block;
+      float: unset !important;
+    }
+  }
+}

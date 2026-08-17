@@ -1,0 +1,75 @@
+$default-transition-interval: 0.2s;
+$default-transition-effect: ease-in-out;
+
+@mixin transition-background-color($interval: $default-transition-interval,
+  $effect: $default-transition-effect) {
+  transition: background-color $interval $effect;
+}
+
+@mixin transition-color($interval: $default-transition-interval,
+  $effect: $default-transition-effect) {
+  transition: color $interval $effect;
+}
+
+@mixin center-vertically-with-flex {
+  display: inline-flex;
+  align-items: center;
+}
+
+@mixin yaymail-sortable-ghost {
+  .yaymail-sortable-ghost {
+    .yaymail-customizer-sidebar-element {
+      display: none !important;
+    }
+
+    .yaymail-ghost-element {
+      display: block;
+    }
+  }
+
+  .yaymail-chosen-element.yaymail-sortable-ghost {
+    .yaymail-element__content {
+      display: none;
+    }
+
+    background-color: rgb(224, 223, 223) !important;
+    box-shadow: none !important;
+    height: 20px !important;
+    padding: 0 !important;
+  }
+
+  .yaymail-ghost-pattern-element {
+    width: 100% !important;
+  }
+}
+
+@mixin box-shadow($value) {
+  -moz-box-shadow: $value; // Firefox
+  -ms-box-shadow: $value; // IE
+  -o-box-shadow: $value; // Opera
+  -webkit-box-shadow: $value; // Safari, Chrome, and newer browsers
+  box-shadow: $value; // Standard CSS property
+}
+
+@mixin transform($value) {
+  -moz-transform: $value; // Firefox
+  -ms-transform: $value; // IE
+  -o-transform: $value; // Opera
+  -webkit-transform: $value; // Safari, Chrome, and newer browsers
+  transform: $value; // Standard CSS property
+}
+
+@mixin transition($value) {
+  -webkit-transition: $value;
+  -moz-transition: $value;
+  transition: $value;
+}
+
+@mixin prevent-select {
+  /* Safari */
+  -webkit-user-select: none;
+  /* IE 10 and IE 11 */
+  -ms-user-select: none;
+  /* Standard syntax */
+  user-select: none;
+}

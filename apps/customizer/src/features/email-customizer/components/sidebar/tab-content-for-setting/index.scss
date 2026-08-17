@@ -1,0 +1,103 @@
+.yaymail-customizer-tab-setting {
+  .yaymail-collapse-item {
+    &-active {
+      background: #323436 !important;
+    }
+  }
+
+  .yaymail-collapse-content-box > *:first-child {
+    border-bottom: 1px solid var(--yaymail-sidebar-color-grey-light);
+  }
+
+  .yaymail-btn-save-wrapper {
+    text-align: right;
+
+    .yaymail-btn-save {
+      margin-top: var(--yaymail-margin-top);
+    }
+
+    .yaymail-email-customizer__action__save-template {
+      margin-top: var(--yaymail-margin-top);
+    }
+  }
+
+  .yaymail-general-setting-item {
+    &.horizontal {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    margin: 20px 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    .vertical-control {
+      width: 100%;
+      margin: 6px 0;
+    }
+
+    &__title {
+      color: var(--yaymail-color-white);
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__note {
+      color: var(--yaymail-color-antarctica);
+      font-size: 11px;
+      font-style: italic;
+      margin-top: 2px;
+    }
+  }
+
+  .happy-with-yaymail {
+    &-content {
+      display: flex;
+      align-items: start;
+
+      &__logo {
+        .logo-wrapper {
+          width: 30px;
+          height: 30px;
+          background-color: #3e3a2e;
+          border-radius: 50%;
+
+          svg {
+            fill: #ffc900;
+          }
+        }
+      }
+
+      &__text {
+        color: var(--yaymail-color-antarctica);
+        padding-left: 15px;
+
+        .yaymail-icon-relax {
+          transform: translateY(2px);
+          margin-left: 0.2em;
+        }
+      }
+    }
+  }
+
+  .yaymail-btn-already-did {
+    background: #3c3f40;
+    border: #3c3f40;
+    color: var(--yaymail-color-white);
+    margin-right: 25px;
+
+    &:hover {
+      background: #404448;
+      border: #404448;
+      color: var(--yaymail-color-white);
+    }
+  }
+
+  .yaymail-customizer-settings__email-settings .yaymail-title {
+    font-weight: 400;
+  }
+}

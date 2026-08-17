@@ -1,0 +1,51 @@
+@use '@src/assets/styles/mixins' as *;
+
+$color-blackadder: var(--yaymail-color-blackadder);
+$color-gluon-grey: #1a1c1d;
+
+.yaymail-editor-property-select-button {
+  $border-radius: var(--yaymail-sidebar-border-radius-md);
+
+  .yaymail-controls-container {
+    font-size: 14px;
+    height: 40px;
+
+    .yaymail-select-button-wrapper {
+      display: flex;
+
+      @include box-shadow(none);
+
+      .yaymail-select-button-option {
+        cursor: pointer;
+        margin: 0 3px;
+        border-radius: $border-radius;
+        text-align: center;
+        font-size: 14px;
+        line-height: 40px;
+        color: #b9b9b9;
+        background-color: $color-gluon-grey;
+        border-color: transparent;
+        flex-grow: 1;
+        visibility: hidden;
+
+        &:hover {
+          color: var(--yaymail-color-white);
+        }
+
+        &::before {
+          background-color: $color-blackadder;
+        }
+
+        &-show {
+          visibility: visible;
+        }
+
+        &-active {
+          background-color: $color-blackadder;
+          color: var(--yaymail-color-white);
+        }
+
+      }
+    }
+  }
+}

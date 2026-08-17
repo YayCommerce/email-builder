@@ -1,0 +1,146 @@
+@use '@src/assets/styles/screen' as *;
+
+section.yaymail-settings {
+  .yaymail-settings {
+    &-card {
+      width: 100%;
+    }
+
+    &__content {
+      background-color: #f9fafb;
+      border-radius: 5px;
+      border: 1px solid #f3f3f3;
+
+      & > * {
+        border-bottom: 1px solid #f3f3f3;
+
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+    }
+
+    &-option-wrapper {
+      display: flex;
+      width: 100%;
+      padding: 1rem;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    &-label {
+      // display: inline-block;
+      display: flex;
+      flex-direction: column;
+      max-width: 100%;
+
+      &:first-child {
+        width: 450px;
+      }
+      &.secondary_column {
+        .yaymail-settings-label__primary {
+          visibility: hidden;
+        }
+      }
+
+      @include medium {
+        &.secondary_column > :first-child {
+          display: none;
+        }
+        width: 100%;
+      }
+      @include small {
+        &.secondary_column > :first-child {
+          display: none;
+        }
+        width: 100%;
+      }
+    }
+
+    &-label__primary {
+      font-weight: bold;
+    }
+
+    &-label__secondary {
+      margin-top: 5px;
+      font-size: 12px;
+      color: #828691;
+    }
+
+    &-import-file-name {
+      font-style: italic;
+    }
+  }
+
+  .yaymail-settings-tabs {
+    .yaymail-tabs-nav {
+      background-color: #f9fafb;
+      padding: 1rem 0 1rem 24px;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+
+      .yaymail-tabs-nav-list > * {
+        border-top: 1px solid #f2f3f4;
+
+        &:first-child {
+          border-top: 0;
+        }
+
+        .yaymail-tabs-tab-btn > *:last-child {
+          margin: 0;
+        }
+
+        @include small {
+          .yaymail-tabs-tab-btn > :nth-child(n + 2) {
+            display: none;
+          }
+        }
+      }
+
+      .yaymail-tabs-tab-active {
+        background-color: #ffffff;
+      }
+
+      .yaymail-tabs-ink-bar {
+        left: 0;
+      }
+    }
+
+    .yaymail-tabs-tab {
+      border-left: 3px solid transparent;
+      transition: border-color 0.2s ease-in-out;
+      &:hover {
+        border-left-color: #e6e8eb;
+      }
+    }
+  }
+
+  .yaymail-settings__title {
+    // color: red;
+    margin: 0;
+  }
+
+  .yaymail-settings__description {
+    margin-top: 5px;
+    margin-bottom: 1.5rem;
+    color: #676767;
+  }
+}
+
+// @include small {
+//   section.yaymail-settings {
+//     .yaymail-settings {
+//       &-label {
+//         display: none;
+//       }
+//     }
+//   }
+// }
+
+.yaymail-reset-template__modal {
+  .yaymail-select-selection-search {
+    input[type='search']:focus {
+      box-shadow: none;
+    }
+  }
+}

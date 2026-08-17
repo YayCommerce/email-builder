@@ -1,0 +1,119 @@
+@use '@src/assets/styles/mixins' as *;
+
+$text-color: var(--yaymail-color-antarctica);
+$background-color: rgba(0, 0, 0, 0.25);
+$background-color-focused: #111213;
+$icon-color: rgb(85, 85, 85);
+$placeholder-color: rgb(125, 125, 125);
+
+.yaymail-patterns-panel__tab-content {
+  .yaymail-customizer-scroll-content {
+    margin: 0;
+  }
+
+  .yaymail-pattern-item {
+    width: 100%;
+    height: auto;
+
+    .yaymail-customizer-sidebar-element {
+      height: unset;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 40px;
+    }
+
+    .yaymail-customizer-sidebar-element {
+      padding: 0;
+      background-color: transparent;
+    }
+  }
+
+  .yaymail-collapse-item {
+    background: #1f2224 !important;
+
+    .yaymail-collapse-content-box {
+      padding: 0;
+    }
+  }
+
+  .yaymail-custom-search {
+    border-radius: var(--yaymail-sidebar-border-radius-md);
+    background-color: $background-color;
+    border: none;
+    padding: 3px 14px;
+    transition: background-color 0.1s ease-in-out !important;
+
+    .yaymail-input,
+    .yaymail-input-suffix,
+    .yaymail-input-suffix * {
+      transition: background-color 0.1s ease-in-out !important;
+    }
+
+    .yaymail-input-suffix {
+      cursor: pointer;
+
+      svg {
+        fill: $icon-color;
+      }
+    }
+
+    &.yaymail-input-affix-wrapper-focused {
+      @include box-shadow(none !important);
+      background-color: $background-color-focused !important;
+    }
+
+    .yaymail-input {
+      outline: none;
+      background-color: transparent;
+
+      &::placeholder {
+        color: $placeholder-color;
+        opacity: 0.4;
+      }
+    }
+
+    & * {
+      border: none;
+      border-radius: var(--yaymail-sidebar-border-radius-md);
+
+      color: $text-color !important;
+      background-color: transparent;
+    }
+  }
+
+  .empty-pattern-search-result {
+    &__message {
+      color: var(--yaymail-color-antarctica);
+    }
+
+    ellipse {
+      fill: var(--yaymail-sidebar-controlBackground-default);
+    }
+
+    path[fill='#fafafa'] {
+      fill: var(--yaymail-sidebar-controlBackground-default);
+    }
+
+    g[stroke='#d9d9d9'] {
+      stroke: var(--yaymail-color-antarctica);
+      opacity: 0.9;
+    }
+  }
+}
+
+.yaymail-ghost-pattern-element {
+  svg {
+    max-width: 100%;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}

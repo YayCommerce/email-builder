@@ -1,0 +1,22 @@
+.yaymail-layout-grid-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 20px;
+
+  &__item {
+    display: inline-block;
+    width: 100%;
+
+    .yaymail-custom-color-picker {
+      margin-bottom: 0;
+
+      // .yaymail-custom-color-picker-button {
+      //   width: 100%;
+      // }
+    }
+
+    .yaymail-editor-property-color {
+      width: 100% !important;
+    }
+  }
+}

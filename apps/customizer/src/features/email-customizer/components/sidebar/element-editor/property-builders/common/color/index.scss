@@ -1,0 +1,14 @@
+.yaymail-editor-property.yaymail-editor-property-color {
+    display: inline-block;
+    width: 50%;
+
+    .yaymail-custom-color-picker-button {
+        width: 125px;
+    }
+
+    // &.yaymail-editor-property-color:nth-child(n+3) {
+    //     .yaymail-custom-color-picker {
+    //         border: 1px solid blue;
+    //     }
+    // }
+}

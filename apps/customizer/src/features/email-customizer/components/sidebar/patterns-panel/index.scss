@@ -1,0 +1,124 @@
+@use '@src/assets/styles/mixins' as *;
+$customizer-header-height: 52px;
+$padding: 16px;
+$text-color: #929393;
+
+.yaymail-customizer-sidebar__patterns-panel {
+  background-color: #18191a;
+  height: calc(100vh - #{$customizer-header-height});
+  position: absolute;
+  top: calc(-100vh + #{$customizer-header-height});
+  width: var(--yaymail-sidebar-width);
+  transition: transform 0.3s ease-in-out;
+  z-index: calc(var(--yaymail-headerIndex) + 1);
+
+  &.yaymail-pattern-panel-open {
+    opacity: 1;
+    &:dir(ltr) {
+      transform: translateX(var(--yaymail-sidebar-width));
+    }
+    &:dir(rtl) {
+      transform: translateX(calc(var(--yaymail-sidebar-width) * -1));
+    }
+  }
+
+  .yaymail-tabs-nav-wrap {
+    border-bottom: 1px solid #292b2c;
+  }
+
+  .yaymail-patterns-panel {
+    &__title {
+      color: $text-color;
+      text-align: center;
+      font-size: 14px;
+      margin: 10px 7px;
+      padding: $padding;
+    }
+
+    &__tabs {
+      width: 100%;
+      border-top: 1px solid #292b2c;
+
+      &__tabs {
+        width: 100%;
+      }
+
+      .yaymail-tabs-tab {
+        width: 50%;
+        padding-top: $padding;
+        padding-bottom: $padding;
+
+        border-bottom: 2px solid transparent;
+
+        &-btn {
+          width: 100%;
+          margin: unset auto;
+          font-weight: 600;
+          color: #9ba1a7;
+          text-align: center;
+        }
+
+        &.yaymail-tabs-tab-active .yaymail-tabs-tab-btn,
+        &:hover .yaymail-tabs-tab-btn {
+          color: #fff;
+        }
+
+        &:not(.yaymail-tabs-tab-active):hover {
+          border-bottom-color: #2f3234;
+        }
+      }
+
+      .yaymail-tabs-ink-bar {
+        height: 2px;
+        background-color: #ffffff;
+      }
+
+      .yaymail-tabs-nav-list {
+        width: 100%;
+        .yaymail-tabs-tab[data-node-key='library'] {
+          .yaymail-tabs-tab-btn {
+            display: block;
+            position: relative;
+          }
+        }
+      }
+
+      .yaymail-tabs-nav-wrap {
+        border-bottom: 1px solid #292b2c;
+      }
+    }
+
+    &__tab-content {
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+      .yaymail-custom-scrollbar {
+        height: calc(100vh - 265px) !important;
+        margin: 10px 0;
+      }
+    }
+  }
+
+  .yaymail-library-tab-content {
+    .yaymail-patterns-panel {
+      &__tab-content {
+        .yaymail-collapse-header {
+          display: none;
+        }
+
+        .yaymail-library-tab-content__container {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          .yaymail-library-tab-content__text {
+            text-align: center;
+            color: $text-color;
+            font-size: 14px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.yaymail-skeleton-divider {
+    background-color: var(--yaymail-color-white);
+    padding: 2.5rem 1rem;
+
+    .yaymail-skeleton-paragraph {
+        margin: 3px;
+
+        li {
+            height: 15px;
+        }
+    }
+
+    .yaymail-skeleton-divider__image {
+        .yaymail-skeleton-paragraph {
+            li {
+                height: 300px;
+                border-radius: 10px;
+            }
+        }
+    }
+}

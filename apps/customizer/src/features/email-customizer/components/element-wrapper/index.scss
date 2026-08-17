@@ -1,0 +1,39 @@
+@use '@src/assets/styles/mixins' as *;
+
+.yaymail-customizer-email-template-container {
+  .yaymail-customizer-element {
+    width: 100%;
+    position: relative;
+    transition: box-shadow 0.1s ease-in-out;
+    word-wrap: anywhere;
+
+    &:not(.yaymail-chosen-element) {
+      cursor: pointer;
+    }
+
+    & > table {
+      width: 100%;
+    }
+
+    &:not(.yaymail-multi-selected):hover {
+      z-index: 2;
+      @include box-shadow(0 0 12px 2px var(--yaymail-color-cerebralGrey));
+    }
+  }
+
+  .yaymail-chosen-element {
+    position: relative;
+    margin: 8px 0;
+    cursor: text;
+
+    z-index: 2;
+    @include box-shadow(0 0 8px 0 var(--yaymail-color-cerebralGrey));
+  }
+
+  .yaymail-element__content {
+    p {
+      font-size: 14px;
+      margin: 0px;
+    }
+  }
+}

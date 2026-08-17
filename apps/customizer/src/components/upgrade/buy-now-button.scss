@@ -1,0 +1,19 @@
+.yaymail-go-pro__buy-now-button {
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #fcb900;
+    height: unset;
+    color: #ffff;
+    border-radius: 8px;
+    padding: 10px 16px;
+    width: min(180px, 100%);
+    position: relative;
+
+    &:hover {
+        background-color: #ffc71c !important;
+    }
+
+    &:focus {
+        color: #ffff !important;
+    }
+}

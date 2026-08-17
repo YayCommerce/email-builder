@@ -1,0 +1,89 @@
+@use '@src/assets/styles/mixins' as *;
+
+.yaymail-customizer-template-section {
+  min-height: 70vh;
+}
+
+.yaymail-customizer-email-template-container {
+  max-width: 900px;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  a {
+    pointer-events: none;
+    cursor: default;
+  }
+
+  @include yaymail-sortable-ghost;
+
+  &.yaymail-uneditable-template {
+    pointer-events: none;
+  }
+}
+
+.yaymail-customizer-email-template-container__empty {
+  text-align: center;
+  padding: 10px 10px;
+  margin: auto;
+  user-select: none;
+  margin: 40px 0;
+  position: relative;
+
+  h2 {
+    font-size: 20px;
+    margin: 10px;
+    text-align: center;
+  }
+
+  p {
+    color: #636363;
+    font-size: 16px;
+    margin: 10px;
+    margin-bottom: 12px;
+  }
+
+  &::before,
+  &::after {
+    content: '+';
+    border: 1px dashed #d9d9d9;
+    border-radius: 10px;
+    font-size: 25px;
+    color: #939393;
+    font-weight: 200;
+    padding: 8px 10px 10px 10px;
+  }
+
+  &::before {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &::after {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.yaymail-customizer-email-template-container:has(
+    .yaymail-customizer-email-template-container__empty
+  ) {
+  &:has(.yaymail-sortable-ghost:nth-child(2)) {
+    .yaymail-customizer-email-template-container__empty {
+      margin-top: 0 !important;
+      &::before {
+        display: none;
+      }
+    }
+  }
+  &:has(.yaymail-sortable-ghost:nth-child(3)) {
+    .yaymail-customizer-email-template-container__empty {
+      margin-bottom: 0 !important;
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

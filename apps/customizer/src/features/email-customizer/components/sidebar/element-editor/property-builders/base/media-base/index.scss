@@ -1,0 +1,42 @@
+@use '@src/assets/styles/mixins' as *;
+
+.yaymail-editor-property-image {
+
+    .yaymail-change-image-btn {
+        border-radius: 2px;
+        width: 100%;
+        padding: 22px 0;
+        @include center-vertically-with-flex();
+        justify-content: space-around;
+        position: relative;
+
+        .yaymail-btn-delete {
+            position: absolute;
+            right: 10px;
+            font-size: 16px;
+            color: var(--yaymail-color-white);
+            opacity: 0.25;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &.yaymail-disabled {
+                opacity: 0.25;
+                cursor: not-allowed;
+            }
+        }
+    }
+
+    .yaymail-preview-image {
+        background-color: var(--yaymail-color-blackadder);
+        object-fit: contain;
+    }
+
+    &__modal {
+        &__title {
+            margin: 0;
+            font-size: 22px;
+        }
+    }
+}

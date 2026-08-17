@@ -1,0 +1,68 @@
+@use '@src/assets/styles/mixins' as *;
+
+.yaymail-chosen-element {
+  .yaymail-customizer-element-column {
+    position: relative;
+    vertical-align: top;
+
+    .yaymail-resize-handle {
+      cursor: col-resize;
+      height: 100%;
+      left: -10px;
+      position: absolute;
+      top: 0;
+      width: 20px;
+      z-index: 3;
+
+      &:active {
+        width: 150px;
+        left: -75px;
+      }
+    }
+  }
+}
+
+.yaymail-customizer-element-nested-column-content {
+  overflow: hidden;
+  position: relative;
+  @include yaymail-sortable-ghost;
+
+  &:hover {
+    border: none !important;
+    z-index: 10;
+  }
+
+  // &:not(:empty):hover {
+  //     outline: 1px solid #d5dadf;
+  // }
+
+  .yaymail-customizer-element {
+    margin: 0;
+    word-wrap: break-word;
+
+    &:hover {
+      @include box-shadow(none !important);
+    }
+
+    &:hover,
+    &.yaymail-chosen-element {
+      outline: 1px solid #d5dadf;
+      outline-offset: -1px;
+    }
+  }
+
+  &:empty {
+    border: 1px dashed #d5dadf !important;
+
+    &::after {
+      content: '\f543';
+      font-family: 'dashicons';
+      position: absolute;
+      font-size: 20px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #afb7a4;
+    }
+  }
+}

@@ -1,0 +1,220 @@
+.yaymail-editor-property-order-progress-steps {
+  .order-progress-steps-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    .yaymail-title {
+      margin: 0;
+    }
+  }
+
+  .order-progress-steps-empty {
+    text-align: center;
+    padding: 32px 16px;
+    color: #8c8c8c;
+
+    p {
+      margin: 4px 0;
+      font-size: 13px;
+    }
+  }
+
+  .yaymail-order-progress-steps-menu {
+    // Match Conditional Logic Menu spacing/structure
+    & > li {
+      margin-top: 0.7rem;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    &.yaymail-menu-dark {
+      border-radius: 5px;
+      background-color: inherit;
+      color: var(--yaymail-color-antarctica);
+
+      .yaymail-menu-submenu-title {
+        padding-left: 10px !important;
+        position: relative;
+        margin-block: 0 !important;
+        background-color: transparent;
+        .yaymail-menu-submenu-arrow {
+          right: 40px;
+        }
+
+        // Match conditional logic: icon slot is positioned at the end of the row.
+        .yaymail-delete-step-button {
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          cursor: pointer;
+          line-height: 1;
+
+          &:hover {
+            .anticon-delete {
+              color: var(--yaymail-color-white);
+            }
+          }
+        }
+      }
+
+      &.yaymail-menu-inline {
+        .yaymail-menu-sub.yaymail-menu-inline {
+          background-color: #323434;
+        }
+      }
+
+      // Submenu body items wrap the step form — Ant Menu defaults use controlHeightLG (40px)
+      // for height + line-height, which inherits into fields and looks like huge vertical gaps.
+      .yaymail-menu-sub {
+        .yaymail-menu-item {
+          padding-left: 12px !important;
+          padding-right: 12px !important;
+          margin: 0;
+          width: 100%;
+          border-radius: 0;
+          height: auto !important;
+          min-height: 0 !important;
+          line-height: 1.45 !important;
+          overflow: visible !important;
+          white-space: normal !important;
+          padding-block: 10px !important;
+
+          &:hover {
+            background-color: inherit !important;
+          }
+        }
+      }
+
+      .yaymail-menu-item-selected {
+        background-color: inherit;
+      }
+    }
+
+    // Conditional Logic: keep submenu clipped + correct background when expanded.
+    .yaymail-menu-submenu {
+      overflow: hidden;
+
+      &.yaymail-menu-submenu-inline {
+        background-color: #2b2c2e;
+
+        &:hover,
+        &.yaymail-menu-submenu-open {
+          background-color: #424547;
+        }
+      }
+    }
+  }
+
+  .yaymail-order-progress-step-menu-title__text {
+    display: inline-block;
+    max-width: calc(100% - 72px);
+    padding-right: 8px;
+    vertical-align: middle;
+  }
+
+  .order-progress-step-menu-content {
+    // Undo Menu item line-height inheritance from Ant Design (often 40px on submenu rows).
+    line-height: 1.45;
+
+    // Tighten default property-builder spacing for this panel.
+    .yaymail-editor-property {
+      margin-top: 14px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      .yaymail-title {
+        margin-block-end: 6px;
+        line-height: 1.35;
+      }
+    }
+
+    // Inputs / textarea must not inherit 40px line-height from Menu.
+    .yaymail-input,
+    textarea.yaymail-input {
+      line-height: 22px !important;
+    }
+
+    // Color picker adds large bottom margin globally; keep this panel compact.
+    .yaymail-custom-color-picker {
+      margin-bottom: 10px !important;
+    }
+
+    // MediaBase is visually heavy by default; compact it here to avoid large gaps.
+    .yaymail-editor-property-image {
+      .yaymail-change-image-btn {
+        padding: 14px 0;
+      }
+
+      .yaymail-preview-image {
+        max-height: 100px;
+
+        img {
+          max-height: 100px;
+          object-fit: contain;
+        }
+      }
+    }
+
+    // Most property builders already render their own title + spacing.
+    // Only style helper text rows used by this builder.
+    &__row {
+      margin: 10px 0;
+    }
+
+    &__row--two-cols {
+      > .yaymail-editor-property {
+        margin-top: 10;
+      }
+    }
+
+    &__title {
+      font-weight: 500;
+      font-size: 13px;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    &__help {
+      display: block;
+      margin-top: 6px;
+      color: #8c8c8c;
+      font-size: 12px;
+    }
+  }
+}
+
+.yaymail-add-step-button {
+  position: relative;
+  display: inline-block;
+  margin-left: auto;
+  cursor: pointer;
+  text-align: center;
+  color: var(--yaymail-color-antarctica);
+  font-weight: 500;
+  padding: 7px 14px;
+  background-color: var(--yaymail-sidebar-backgroundHistoryItem-default);
+  border-radius: 5px;
+
+  &:hover {
+    color: var(--yaymail-color-antarctica) !important;
+    background-color: #424547 !important;
+  }
+
+  &--container {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  &:focus {
+    background-color: inherit;
+  }
+}

@@ -1,0 +1,32 @@
+@use '@src/assets/styles/mixins' as *;
+
+.yaymail-customizer-scroll-content {
+  margin: var(--yaymail-sidebar-padding);
+}
+
+/** Override react-custom-scrollbars-2 */
+.yaymail-custom-scrollbar {
+  &>div:last-child {
+    width: 3px !important;
+
+    div {
+      @include transition-background-color;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      div {
+        background: rgb(85, 88, 89) !important;
+      }
+    }
+  }
+}
+
+.yaymail-scrolling {
+  &>div:last-child {
+    div {
+      background: rgb(85, 88, 89) !important;
+    }
+  }
+}

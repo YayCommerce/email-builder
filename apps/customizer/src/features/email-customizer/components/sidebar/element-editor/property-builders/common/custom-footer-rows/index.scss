@@ -1,0 +1,115 @@
+.yaymail-editor-property-custom-footer-rows {
+  .custom-footer-rows-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    .yaymail-title {
+      margin: 0;
+    }
+  }
+
+  .custom-footer-rows-empty {
+    text-align: center;
+    padding: 32px 16px;
+    color: #8c8c8c;
+
+    p {
+      margin: 4px 0;
+      font-size: 13px;
+    }
+  }
+
+  .custom-footer-rows-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .custom-row-item {
+    .row-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      color: #ffffff;
+
+      .row-title {
+        flex: 1;
+        font-weight: 500;
+        font-size: 13px;
+      }
+
+      .row-action {
+        display: flex;
+        text-align: end;
+        gap: 4px;
+
+        button {
+          color: #ffffff;
+        }
+
+        button:disabled {
+          color: #8c8c8c;
+        }
+      }
+    }
+
+    .row-content {
+      .form-group {
+        color: #ffffff;
+        margin-bottom: 12px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        label {
+          display: block;
+          margin-bottom: 4px;
+          font-weight: 500;
+          font-size: 13px;
+          color: #ffffff;
+        }
+
+        small {
+          display: block;
+          margin-top: 4px;
+          color: #8c8c8c;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .zone-option {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    .zone-icon {
+      font-size: 18px;
+    }
+
+    .zone-label {
+      font-weight: 500;
+      font-size: 13px;
+    }
+
+    .zone-desc {
+      font-size: 11px;
+      color: #8c8c8c;
+    }
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}

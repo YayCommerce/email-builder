@@ -1,0 +1,66 @@
+@use '@src/assets/styles/mixins' as *;
+
+$sidebar-padding: var(--yaymail-sidebar-padding);
+
+/* Override antd */
+.yaymail-customizer-sidebar-collapse {
+  .yaymail-collapse {
+    &-header {
+      padding: $sidebar-padding;
+      color: #fff !important;
+    }
+
+    &-item {
+      &:not(.yaymail-collapse-item-active):not(:has(.yaymail-motion-collapse)):hover {
+        background: var(--yaymail-collapse-tab-hoverBackground) !important;
+      }
+
+      .yaymail-collapse-expand-icon svg *[fill] {
+        fill: #47494b;
+        fill-opacity: 1;
+      }
+
+      &:hover,
+      &-active {
+        .yaymail-collapse-expand-icon svg *[fill] {
+          fill: #ffffff;
+        }
+      }
+
+      .yaymail-collapse-arrow {
+        transition: transform 0.3s ease;
+        transform: rotate(-90deg);
+        background-color: unset !important;
+        margin: 0 !important;
+      }
+
+      &-active {
+        .yaymail-collapse-arrow {
+          transform: rotate(0);
+        }
+      }
+    }
+
+    &-content-box {
+      padding-top: 0 !important;
+
+      & > *:first-child {
+        margin: 0;
+        padding: $sidebar-padding 0;
+        border-top: 1px solid var(--yaymail-sidebar-color-grey-light);
+      }
+    }
+  }
+
+  &.is-hidden {
+    display: none;
+  }
+
+  .is-selected {
+    background-color: var(--yaymail-collapse-tab-activeBackground) !important;
+
+    .yaymail-collapse-arrow {
+      transform: rotate(-90deg);
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.yaymail-preview-template__modal {
+  position: relative;
+
+  .yaymail-modal-body {
+    overflow-y: scroll;
+  }
+
+  .yaymail-modal {
+    &-body {
+      height: 80vh;
+      //overflow-y: scroll;
+    }
+  }
+  .yaymail-modal-close {
+    top: 17px;
+  }
+
+  .modal__header {
+    &--right {
+      button {
+        color: var(--yaymail-button-color-grey-200);
+      }
+    }
+  }
+
+  .modal__content {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .yaymail-loading-preview-template {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+  }
+
+  .yaymail-preview-template-content {
+    margin: auto;
+  }
+
+  .yaymail-preview-iframe {
+    display: block;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .yaymail-preview-template-content.yaymail-template-content__mobile {
+    max-width: 400px !important;
+  }
+}

@@ -1,0 +1,98 @@
+$background-color: #2d3032;
+$primary-border-color: #292c2e;
+$text-color: var(--yaymail-color-antarctica);
+$hover-bg-color: #282c2d;
+$active-bg-color: #1d1f21;
+$button-focus-box-shadow: 0 0 0 1px #4f94d4,
+  0 0 2px 1px rgba(79, 148, 212, 0.8);
+$caret-color: #50575e;
+
+.yaymail-editor-property-rich-text {
+  .mce-container {
+    background-color: $background-color !important;
+    border-color: $primary-border-color !important;
+
+    border-radius: var(--yaymail-sidebar-border-radius-md) !important;
+
+    &.mce-tinymce {
+      padding: 7px 0;
+    }
+  }
+
+  .mce-edit-area {
+    background-color: var(--yaymail-rich-editor-bg-color, #ffffff) !important;
+  }
+
+  .mce-txt,
+  .mce-ico:not(.mce-i-backcolor) {
+    color: $text-color !important;
+  }
+
+  .mce-widget {
+    border: none !important;
+
+    &.mce-active {
+      background-color: $active-bg-color !important;
+    }
+
+    &:hover {
+      background-color: $hover-bg-color !important;
+      box-shadow: none !important;
+
+      .mce-caret {
+        border-top-color: $text-color !important;
+      }
+    }
+
+    &:not(.mce-listbox):focus {
+      background-color: initial !important;
+      box-shadow: $button-focus-box-shadow !important;
+
+      .mce-caret {
+        border-bottom-color: $text-color !important;
+      }
+    }
+  }
+
+  .mce-listbox {
+    background-color: $hover-bg-color !important;
+
+    button:hover {
+      background-color: $active-bg-color !important;
+
+      * {
+        background-color: $active-bg-color !important;
+      }
+
+      .mce-caret {
+        border-top-color: $text-color !important;
+      }
+    }
+
+    &.mce-opened {
+      .mce-caret {
+        border-bottom-color: $text-color !important;
+      }
+    }
+  }
+
+  .mce-caret {
+    border-top-color: $caret-color !important;
+  }
+
+  .mce-btn-group {
+    border-left-color: $primary-border-color !important;
+  }
+}
+
+.yaycommerce_page_yaymail-settings {
+  .mce-menu-item.mce-menu-item-expand {
+    .mce-text {
+      text-transform: capitalize;
+    }
+  }
+
+  .mce-menu-item-sep {
+    pointer-events: none !important;
+  }
+}

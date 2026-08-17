@@ -1,0 +1,12 @@
+.yaymail-customizer-element-image {
+  &__anchor {
+    display: block;
+    pointer-events: none;
+    line-height: 0px;
+  }
+
+  img {
+    max-width: 100%;
+    // width: inherit;
+  }
+}

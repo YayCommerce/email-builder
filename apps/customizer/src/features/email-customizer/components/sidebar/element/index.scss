@@ -1,0 +1,119 @@
+@use '@src/assets/styles/mixins' as *;
+
+$element_default_color: var(--yaymail-color-antarctica);
+
+.yaymail-customizer-sidebar-element {
+  position: relative;
+  align-items: center;
+  background: inherit;
+  background-color: #333637;
+  border-radius: var(--yaymail-sidebar-border-radius-lg);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-size: 11px;
+  height: 80px;
+  justify-content: space-around;
+  gap: 5px;
+  width: auto;
+  padding: 10px 12px;
+
+  &__name {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 14px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  &__status-info {
+    position: absolute;
+    top: 2px;
+    right: 4px;
+
+    .yaymail-badge-count {
+      font-size: 10px;
+      min-width: 17px;
+      height: 17px;
+      line-height: 17px;
+      box-shadow: 0 0 0 1px transparent;
+      border-radius: 6px;
+    }
+  }
+
+  & > * {
+    color: $element_default_color !important;
+    font-weight: 400;
+  }
+
+  &:hover .yaymail-element__icon svg {
+    fill: #fff !important;
+  }
+
+  @include transition-background-color;
+
+  &:hover {
+    & > * {
+      color: #fff !important;
+      opacity: 1;
+    }
+
+    background-color: #404243;
+  }
+
+  .yaymail-pointer-events-none {
+    pointer-events: none;
+  }
+
+  &__disabled {
+    $disabled_background: #303030;
+    $disabled_color: #686868;
+    background-color: $disabled_background;
+    cursor: not-allowed;
+
+    .yaymail-element__icon svg {
+      fill: $disabled_color !important;
+    }
+
+    > * {
+      color: $disabled_color !important;
+    }
+
+    &:hover {
+      background-color: #313131;
+
+      .yaymail-element__icon svg {
+        fill: $disabled_color !important;
+      }
+
+      > * {
+        color: $disabled_color !important;
+      }
+    }
+  }
+}
+
+.yaymail-ghost-element {
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 4px;
+  @include box-shadow(0 -4px #e0dfdf);
+}
+
+.yaymail-element__icon {
+  display: flex;
+  justify-content: center;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: $element_default_color;
+  }
+}
+
+.yaymail-element-disabled-icon {
+  width: 100%;
+}

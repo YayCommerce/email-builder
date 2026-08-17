@@ -1,0 +1,57 @@
+.hidden-wp-admin-menu {
+  #adminmenumain {
+    display: none !important;
+  }
+
+  #wpcontent {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #wpadminbar {
+    display: none;
+  }
+
+  &.wp-toolbar {
+    padding-top: 0;
+  }
+}
+
+.yaymail-customizer {
+  &-layout {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    & * {
+      box-sizing: border-box;
+    }
+
+    table ul {
+      padding-inline-start: 40px;
+      list-style: disc;
+    }
+  }
+
+  &-main {
+    height: 100%;
+    min-width: calc(100% - var(--yaymail-sidebar-width));
+    flex: 1;
+    transition: margin-left 0.4s ease-out;
+    overflow-y: auto;
+  }
+
+  &-element {
+    line-height: 22px;
+  }
+}
+
+.yaymail-customizer-sidebar {
+  &__body,
+  &__footer {
+    z-index: calc(var(--yaymail-headerIndex) + 2);
+    background-color: inherit;
+  }
+}

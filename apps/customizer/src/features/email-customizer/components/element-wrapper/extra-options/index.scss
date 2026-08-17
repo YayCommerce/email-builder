@@ -1,0 +1,112 @@
+@use '@src/assets/styles/mixins' as *;
+
+[data-yaymail-element-type='divider'],
+[data-yaymail-element-type='space'] {
+  .yaymail-customizer-element__extra-options {
+    top: 6px;
+  }
+}
+
+.yaymail-customizer-element__extra-options {
+  z-index: 10;
+  position: absolute;
+  top: 16px;
+  right: 13px;
+
+  .extra-options__activator {
+    padding: 4px;
+    border-color: hsl(0, 0%, 95%);
+    background-color: #f2f2f2;
+    border-radius: 7px;
+    cursor: pointer;
+    @include box-shadow(0 0 1px 0 rgba(0, 0, 0, 0.25));
+    transition: background-color 0.1s ease-in-out;
+
+    svg {
+      font-size: 17px;
+      display: block;
+    }
+  }
+
+  &:hover {
+    .extra-options__activator {
+      @include box-shadow(0 0 3px 0 #ccc);
+      background-color: #efe7ee;
+    }
+  }
+}
+
+.yaymail-customizer-email-template-container .yaymail-customizer-element--compact-extra-options {
+  .yaymail-customizer-element__extra-options {
+    top: 50%;
+    right: 13px;
+    transform: translateY(-50%);
+  }
+
+  &[data-yaymail-element-type='divider'] .yaymail-customizer-element__extra-options,
+  &[data-yaymail-element-type='space'] .yaymail-customizer-element__extra-options {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+// Context menu only — match ⋮ Dropdown (yaymail-dropdown-menu) defaults
+.yaymail-custom-context-menu {
+  .yaymail-element-extra-options-menu.yaymail-menu {
+    min-width: 180px;
+    padding: 4px;
+    border-radius: 8px;
+    border-inline-end: none !important;
+    background-color: #ffffff;
+    box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12),
+      0 9px 28px 8px rgba(0, 0, 0, 0.05) !important;
+
+    .yaymail-menu-item {
+      display: flex;
+      align-items: center;
+      margin: 0;
+      padding: 5px 12px;
+      height: auto;
+      min-height: 32px;
+      line-height: 22px;
+      border-radius: 4px;
+      width: 100%;
+
+      &:not(.yaymail-menu-item-disabled):hover {
+        background-color: rgba(0, 0, 0, 0.04);
+      }
+
+      &.yaymail-menu-item-disabled {
+        color: rgba(0, 0, 0, 0.25) !important;
+
+        .yaymail-menu-item-with-tooltip {
+          display: block;
+          width: 100%;
+          pointer-events: auto;
+          cursor: not-allowed;
+        }
+      }
+
+      .yaymail-menu-item-icon,
+      .anticon {
+        font-size: 12px;
+        min-width: 14px;
+      }
+    }
+  }
+}
+
+.yaymail-save-to-library {
+  .yaymail-form-item {
+    input {
+      outline: none;
+      border: none;
+    }
+  }
+  .yaymail-modal-body {
+    padding-bottom: 0;
+  }
+  .yaymail-input-suffix {
+    display: none;
+  }
+}

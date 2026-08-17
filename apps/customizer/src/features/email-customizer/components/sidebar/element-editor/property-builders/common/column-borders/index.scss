@@ -1,0 +1,19 @@
+@use '../border/index.scss' as *;
+
+.yaymail-column-borders {
+    .yaymail-tabs-tab-btn {
+        color: var(--yaymail-color-antarctica);
+    }
+
+    .yaymail-tabs-tab-active {
+        .yaymail-tabs-tab-btn {
+            color: var(--yaymail-color-white) !important;
+        }
+    }
+
+    .yaymail-editor-property-color.disabled .yaymail-custom-color-picker-button {
+        opacity: 0.5;
+        filter: grayscale(100%);
+        pointer-events: none;
+    }
+}

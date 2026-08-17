@@ -1,0 +1,12 @@
+@use '@src/assets/styles/mixins' as *;
+
+.yaymail-customizer-tab-patterns {
+    text-align: center;
+    padding: var(--yaymail-sidebar-padding);
+    border-radius: var(--yaymail-sidebar-border-radius-lg);
+    background-color: var(--yaymail-color-graphiteBlack);
+
+    .yaymail-icon-star {
+        margin-bottom: -2px;
+    }
+}

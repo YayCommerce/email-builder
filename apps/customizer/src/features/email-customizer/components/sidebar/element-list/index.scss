@@ -1,0 +1,13 @@
+.yaymail-sortable-elements-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    &>* {
+        width: 48%;
+    }
+}
+
+.yaymail-ghost-element {
+    display: none;
+}

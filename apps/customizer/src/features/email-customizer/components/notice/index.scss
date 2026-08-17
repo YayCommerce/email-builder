@@ -1,0 +1,26 @@
+.yaymail-notice-message {
+  margin: 0 auto;
+
+  div {
+    background-color: #ffffff;
+    padding: 10px 16px;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    line-height: 22px;
+    margin-bottom: 12px;
+    font-family: inherit;
+    font-size: 14px;
+
+    p {
+      display: inline;
+      font-size: inherit;
+    }
+  }
+
+  .yaymail-notice-icon {
+    position: relative;
+    top: 2px;
+    color: #faad14;
+  }
+}

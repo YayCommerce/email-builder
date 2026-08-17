@@ -1,0 +1,38 @@
+.yaymail-preview-device-switcher {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    border: 1px solid #e5e7eb;
+    border-radius: 7px;
+    padding: 3px;
+    background: #fff;
+    height: fit-content;
+
+    .yaymail-preview-device-switcher__item {
+        cursor: pointer;
+        background: transparent;
+        border-radius: 4px;
+        color: #333333;
+        padding: 6px 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        transition:
+            background 0.2s ease-in-out,
+            color 0.2s ease-in-out;
+
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        &:hover {
+            background: #f3f3f3;
+        }
+    }
+    .yaymail-preview-device-switcher--active {
+        background: #333333 !important;
+        color: #fff !important;
+    }
+}

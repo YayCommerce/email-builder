@@ -1,0 +1,148 @@
+.yaymail-preview-email {
+  &.yaymail-dashboard__content {
+    > * > h3:not(.yaymail-preview-email__title) {
+      display: none;
+    }
+  }
+
+  .yaymail-preview-email-container {
+    background: #f0f0f0;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 16px;
+  }
+
+  &__option {
+    max-width: 400px;
+    flex: auto;
+
+    &__item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      border-radius: 4px;
+      gap: 20px;
+
+      &__title {
+        flex: 150px;
+
+        h4 {
+          margin: 0;
+        }
+      }
+
+      &__content {
+        flex: 100%;
+      }
+    }
+  }
+
+  &__preview {
+    flex: auto;
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+
+      &__email-template {
+        flex: 1;
+      }
+
+      &__search-order {
+        flex: 1;
+      }
+    }
+
+    &__content {
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      overflow: hidden;
+
+      &__subject {
+        background: #fff;
+        border-bottom: 1px solid var(--yaymail-color-grey-400);
+        padding: 16px;
+
+        h2 {
+          margin-bottom: 10px;
+          margin-top: 10px;
+          font-size: 21px;
+          font-weight: 400;
+          line-height: 24px;
+        }
+
+        &__email-address {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          &__icon {
+            align-items: center;
+            background: rgba(203, 190, 255, 0.3);
+            border-radius: 16px;
+            display: flex;
+            height: 32px;
+            justify-content: center;
+            width: 32px;
+          }
+        }
+
+        .yaymail-skeleton-paragraph {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .yaymail-preview-email__preview__selectors,
+    .yaymail-preview-email__preview__actions {
+      display: inline-flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      height: fit-content;
+    }
+
+    .yaymail-preview-email__preview__selectors {
+      flex: 1;
+
+      > * {
+        max-width: 250px;
+      }
+    }
+
+    .yaymail-preview-email__preview__content__body--loading {
+      padding: 16px;
+      background: #ffffff;
+    }
+  }
+
+  &__button-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    &__alert {
+      border-radius: 4px;
+      height: 32px;
+      font-size: 13px;
+    }
+  }
+
+  .yaymail-preview-email__input {
+    .yaymail-select-selection-item {
+      font-size: 14px !important;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .yaymail-preview-email {
+    &__content {
+      width: min(1000px, 100%);
+      margin: auto;
+    }
+  }
+}

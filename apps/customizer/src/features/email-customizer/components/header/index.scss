@@ -1,0 +1,91 @@
+@use '@src/assets/styles/mixins' as *;
+
+.yaymail-email-customizer {
+  &__header {
+    padding: 10px;
+    line-height: normal;
+    position: sticky;
+    top: 0px;
+    z-index: var(--yaymail-headerIndex);
+    background: var(--yaymail-color-white);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px;
+
+    &--left,
+    &--right {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+
+    &--right {
+      margin-inline-start: auto;
+    }
+
+    .header {
+      &__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        @media (max-width: 1599px) {
+          display: none;
+        }
+      }
+
+      &__actions--compact {
+        display: none;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+
+        @media (max-width: 1599px) {
+          display: flex;
+        }
+      }
+     
+    }
+
+    .yaymail-btn--icon-only {
+      @media (max-width: 1599px) {
+        padding: 0px 6px;
+        width: 32px;
+        .yaymail-btn--text {
+          display: none;
+        }
+        .anticon {
+          display: block !important;
+        }
+      }
+    }
+  }
+}
+
+.yaymail-global__select {
+  width: 230px;
+
+  .yaymail-select-selector {
+    transition: border-color 0.3s ease-in-out;
+  }
+
+  &.yaymail-select-focused .yaymail-select-selector {
+    border-color: var(--yaymail-color-grey-400) !important;
+
+    @include box-shadow(none !important);
+
+    &:hover {
+      border-color: var(--yaymail-color-wcPurple-dark) !important;
+    }
+  }
+
+  .yaymail-select-selection-search-input {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+

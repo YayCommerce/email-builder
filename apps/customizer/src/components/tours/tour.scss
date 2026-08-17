@@ -1,0 +1,11 @@
+.yaymail-tour.yaymail-tour--with-cover {
+    top: 40% !important;
+    left: 45% !important;
+    transform: translateY(-50%) !important;
+
+    .yaymail-tour-content {
+        max-height: 77vh !important;
+        overflow: auto !important;
+        scrollbar-width: none !important;
+    }
+}

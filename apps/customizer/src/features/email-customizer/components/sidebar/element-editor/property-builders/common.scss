@@ -1,0 +1,100 @@
+@use '@src/assets/styles/mixins' as *;
+
+$color-gluon-grey: #18191b;
+$input-focused-color: #111213;
+
+.yaymail-editor-property {
+    width: 100%;
+    margin-top: 24px;
+
+    .yaymail-title {
+        color: var(--yaymail-color-white);
+        font-size: 14px;
+        font-weight: 500;
+        margin-block-end: 8px;
+    }
+
+    .yaymail-editor-property-description {
+        font-size: 12px;
+        font-weight: 300;
+        color: var(--yaymail-color-antarctica);
+        margin-block-end: 8px;
+    }
+
+    .yaymail-controls-container {
+        width: inherit;
+
+        .yaymail-input-number {
+            width: unset;
+        }
+    }
+
+    .yaymail-input-number {
+        background-color: $color-gluon-grey;
+        border-color: $color-gluon-grey;
+
+        &-input {
+            color: var(--yaymail-color-antarctica);
+        }
+
+        &.yaymail-input-number-focused {
+            background-color: $input-focused-color !important;
+            border-color: $input-focused-color !important;
+            box-shadow: none !important;
+        }
+    }
+
+    .yaymail-custom-input {
+        background: $color-gluon-grey;
+        border: $color-gluon-grey;
+        color: var(--yaymail-color-antarctica);
+        @include box-shadow(none !important);
+
+        &:focus-visible {
+            outline: none;
+        }
+
+        &:focus {
+            background-color: $input-focused-color !important;
+            border-color: $input-focused-color !important;
+        }
+    }
+
+    .yaymail-select-open {
+        .yaymail-select-selection-item {
+            color: var(--yaymail-color-antarctica) !important;
+        }
+    }
+
+    .yaymail-select-selector {
+        background-color: $color-gluon-grey !important;
+        border-color: $color-gluon-grey !important;
+        color: var(--yaymail-color-antarctica);
+        box-shadow: none !important;
+
+        .yaymail-select-selection-search {
+            input[type='search']:focus {
+                @include box-shadow(none);
+            }
+        }
+
+        .yaymail-select-selection-item-remove {
+            color: var(--yaymail-color-antarctica);
+            opacity: 0.5;
+        }
+    }
+
+    .yaymail-select-multiple {
+        .yaymail-select-selection-item {
+            background-color: #2b2c2e;
+        }
+    }
+
+    .yaymail-select-arrow {
+        .yaymail-select-suffix,
+        &-loading {
+            color: var(--yaymail-color-white);
+            opacity: 0.7;
+        }
+    }
+}

@@ -1,0 +1,40 @@
+{
+  "env": { "browser": true, "es2020": true },
+  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:react/jsx-runtime"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": { "ecmaVersion": "latest", "sourceType": "module" },
+  "plugins": ["react-refresh", "simple-import-sort"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "react-refresh/only-export-components": "warn",
+    "react/prop-types": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    // "no-restricted-imports": ["error", { "patterns": ["@src/features/*/*"] }],
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          ["^react"],
+          ["^.?ant"],
+          ["\\w+/(p|P)ages?\\w"],
+          ["\\w+/(l|L)ayouts?\\w"],
+          ["\\w+/(c|C)omponents?\\w"],
+          ["\\w+/(h|H)ooks?\\w"],
+          ["^@?\\w"],
+          ["@/(.*)"],
+          ["\\w+/(t|T)types?\\w"],
+          ["^[../]"],
+          ["^[./]"],
+          ["^.+\\.?(css)$"]
+        ]
+      }
+    ]
+  },
+  "globals": {
+    "JSX": "readonly"
+  }
+}

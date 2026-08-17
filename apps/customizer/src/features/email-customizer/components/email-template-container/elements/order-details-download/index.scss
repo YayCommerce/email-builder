@@ -1,0 +1,31 @@
+.yaymail-order-details-download-content {
+  a {
+    text-decoration: underline;
+    pointer-events: none;
+  }
+
+  .product_image_position__top,
+  .product_image_position__bottom {
+    display: none;
+  }
+
+  &[product-image-position='left'] .yaymail-product_image_position__top {
+    display: block;
+    float: left !important;
+  }
+
+  &[product-image-position='right'] .yaymail-product_image_position__top {
+    display: block;
+    float: right !important;
+    & img {
+      margin-left: 5px !important;
+    }
+  }
+
+  &[product-image-position='bottom'] .yaymail-product_image_position__bottom,
+  &[product-image-position='top'] .yaymail-product_image_position__top,
+  &[product-image-position='top'] .yaymail-product_image_position__top .yaymail-product-image {
+    display: block;
+    float: unset !important;
+  }
+}

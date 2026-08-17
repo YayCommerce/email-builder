@@ -1,0 +1,47 @@
+.yaymail-go-pro-container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.yaymail-go-pro__main {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+
+    .yaymail-go-pro__main__content {
+        flex: 1;
+        min-width: min(570px, 100%);
+        padding: 50px 60px;
+        background-color: #fafafa;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        & > * {
+            margin-block-end: 30px;
+
+            &:last-child {
+                margin-block-end: 0;
+            }
+        }
+    }
+
+    .yaymail-go-pro__main__content__title {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 58px;
+        margin: 0;
+    }
+
+    .yaymail-go-pro__main__content__description {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 26px;
+    }
+
+    .yaymail-go-pro__main__sub-content {
+        padding: 50px 60px;
+    }
+}
